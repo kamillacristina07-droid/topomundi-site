@@ -307,98 +307,128 @@
 
     <section id="ferramentas" class="secao-ferramentas">
 
-        <div class="container-secao">
+    <div class="container-secao">
 
-            <div class="cabecalho-secao">
+        <div class="cabecalho-secao">
 
-                <span class="etiqueta-secao">
-                    FERRAMENTAS ONLINE
-                </span>
+            <span class="etiqueta-secao">
+                FERRAMENTAS ONLINE
+            </span>
 
-                <h2>
-                    Utilitários para Topografia
-                </h2>
+            <h2>
+                Utilitários para Topografia
+            </h2>
 
-                <p>
-                    Ferramentas gratuitas desenvolvidas para auxiliar
-                    profissionais, estudantes e clientes em cálculos
-                    topográficos do dia a dia.
-                </p>
+            <p>
+                Ferramentas gratuitas desenvolvidas para auxiliar
+                profissionais, estudantes e clientes em cálculos
+                e conversões topográficas.
+            </p>
+
+        </div>
+
+
+        <div class="grade-ferramentas">
+
+            <!-- MENU DAS FERRAMENTAS -->
+
+            <div class="lista-ferramentas">
+
+                <button
+                    class="ferramenta-menu ativa"
+                    type="button"
+                    data-ferramenta="area"
+                >
+
+                    <span class="icone-ferramenta">
+                        ▱
+                    </span>
+
+                    <span>
+                        <strong>
+                            Calculadora de Área
+                        </strong>
+
+                        <small>
+                            Área e perímetro por coordenadas
+                        </small>
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="ferramenta-menu"
+                    type="button"
+                    data-ferramenta="coordenadas"
+                >
+
+                    <span class="icone-ferramenta">
+                        ⇄
+                    </span>
+
+                    <span>
+                        <strong>
+                            Conversor de Coordenadas
+                        </strong>
+
+                        <small>
+                            UTM ↔ Latitude/Longitude
+                        </small>
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="ferramenta-bloqueada"
+                    type="button"
+                >
+
+                    <span class="icone-ferramenta">
+                        ∠
+                    </span>
+
+                    <span>
+                        <strong>
+                            Calculadora de Declividade
+                        </strong>
+
+                        <small>
+                            Em breve
+                        </small>
+                    </span>
+
+                </button>
 
             </div>
 
 
-            <div class="grade-ferramentas">
+            <!-- =========================================
+                 CALCULADORA DE ÁREA
+            ========================================== -->
 
-                <div class="lista-ferramentas">
-
-                    <button
-                        class="ferramenta-selecionada"
-                        type="button"
-                    >
-                        <span class="icone-ferramenta">▱</span>
-
-                        <span>
-                            <strong>Calculadora de Área</strong>
-                            <small>
-                                Área e perímetro por coordenadas
-                            </small>
-                        </span>
-                    </button>
-
-
-                    <button
-                        class="ferramenta-bloqueada"
-                        type="button"
-                    >
-                        <span class="icone-ferramenta">⇄</span>
-
-                        <span>
-                            <strong>Conversor de Coordenadas</strong>
-                            <small>
-                                Em breve
-                            </small>
-                        </span>
-                    </button>
-
-
-                    <button
-                        class="ferramenta-bloqueada"
-                        type="button"
-                    >
-                        <span class="icone-ferramenta">∠</span>
-
-                        <span>
-                            <strong>Calculadora de Declividade</strong>
-                            <small>
-                                Em breve
-                            </small>
-                        </span>
-                    </button>
-
-                </div>
-
-
-                <!-- CALCULADORA -->
+            <div
+                class="painel-ferramenta ativo"
+                id="painel-area"
+            >
 
                 <div class="calculadora-area">
 
                     <div class="calculadora-topo">
 
-                        <div>
-                            <span class="calculadora-etiqueta">
-                                FERRAMENTA GRATUITA
-                            </span>
+                        <span class="calculadora-etiqueta">
+                            FERRAMENTA GRATUITA
+                        </span>
 
-                            <h3>
-                                Calculadora de Área
-                            </h3>
+                        <h3>
+                            Calculadora de Área
+                        </h3>
 
-                            <p>
-                                Informe as coordenadas dos vértices
-                                sequencialmente.
-                            </p>
-                        </div>
+                        <p>
+                            Informe as coordenadas dos vértices
+                            sequencialmente.
+                        </p>
 
                     </div>
 
@@ -417,7 +447,9 @@
 
                         <div class="linha-coordenada">
 
-                            <span class="numero-ponto">P1</span>
+                            <span class="numero-ponto">
+                                P1
+                            </span>
 
                             <input
                                 type="number"
@@ -446,7 +478,9 @@
 
                         <div class="linha-coordenada">
 
-                            <span class="numero-ponto">P2</span>
+                            <span class="numero-ponto">
+                                P2
+                            </span>
 
                             <input
                                 type="number"
@@ -475,7 +509,9 @@
 
                         <div class="linha-coordenada">
 
-                            <span class="numero-ponto">P3</span>
+                            <span class="numero-ponto">
+                                P3
+                            </span>
 
                             <input
                                 type="number"
@@ -525,46 +561,55 @@
                     </div>
 
 
-                    <div
-                        id="resultadoArea"
-                        class="resultado-area"
-                    >
+                    <div class="resultado-area">
 
                         <div class="resultado-item">
 
-                            <span>Área</span>
+                            <span>
+                                Área
+                            </span>
 
                             <strong id="resultadoM2">
                                 —
                             </strong>
 
-                            <small>m²</small>
+                            <small>
+                                m²
+                            </small>
 
                         </div>
 
 
                         <div class="resultado-item">
 
-                            <span>Área</span>
+                            <span>
+                                Área
+                            </span>
 
                             <strong id="resultadoHa">
                                 —
                             </strong>
 
-                            <small>hectares</small>
+                            <small>
+                                hectares
+                            </small>
 
                         </div>
 
 
                         <div class="resultado-item">
 
-                            <span>Perímetro</span>
+                            <span>
+                                Perímetro
+                            </span>
 
                             <strong id="resultadoPerimetro">
                                 —
                             </strong>
 
-                            <small>metros</small>
+                            <small>
+                                metros
+                            </small>
 
                         </div>
 
@@ -583,8 +628,299 @@
 
                         esta ferramenta fornece cálculo geométrico
                         auxiliar e não substitui levantamento,
-                        conferência ou responsabilidade técnica
-                        profissional.
+                        conferência ou responsabilidade técnica.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================================
+                 CONVERSOR DE COORDENADAS
+            ========================================== -->
+
+            <div
+                class="painel-ferramenta"
+                id="painel-coordenadas"
+            >
+
+                <div class="calculadora-area">
+
+                    <div class="calculadora-topo">
+
+                        <span class="calculadora-etiqueta">
+                            FERRAMENTA GRATUITA
+                        </span>
+
+                        <h3>
+                            Conversor de Coordenadas
+                        </h3>
+
+                        <p>
+                            Converta coordenadas entre UTM
+                            e Latitude/Longitude.
+                        </p>
+
+                    </div>
+
+
+                    <!-- TIPO DE CONVERSÃO -->
+
+                    <div class="tipo-conversao">
+
+                        <button
+                            type="button"
+                            class="botao-tipo-conversao ativo"
+                            data-tipo="utm-latlon"
+                        >
+                            UTM → Latitude/Longitude
+                        </button>
+
+                        <button
+                            type="button"
+                            class="botao-tipo-conversao"
+                            data-tipo="latlon-utm"
+                        >
+                            Latitude/Longitude → UTM
+                        </button>
+
+                    </div>
+
+
+                    <!-- CONFIGURAÇÕES -->
+
+                    <div class="grade-configuracao">
+
+                        <div class="campo-formulario">
+
+                            <label for="datum">
+                                Datum
+                            </label>
+
+                            <select id="datum">
+
+                                <option value="sirgas2000">
+                                    SIRGAS 2000
+                                </option>
+
+                                <option value="wgs84">
+                                    WGS84
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- UTM PARA LAT/LON -->
+
+                    <div
+                        id="formUtmLatLon"
+                        class="form-conversao ativo"
+                    >
+
+                        <div class="grade-campos-conversor">
+
+                            <div class="campo-formulario">
+
+                                <label for="utmE">
+                                    Coordenada E
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="utmE"
+                                    placeholder="Ex.: 682000"
+                                >
+
+                            </div>
+
+
+                            <div class="campo-formulario">
+
+                                <label for="utmN">
+                                    Coordenada N
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="utmN"
+                                    placeholder="Ex.: 8154000"
+                                >
+
+                            </div>
+
+
+                            <div class="campo-formulario">
+
+                                <label for="utmFuso">
+                                    Fuso UTM
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="utmFuso"
+                                    min="1"
+                                    max="60"
+                                    value="22"
+                                >
+
+                            </div>
+
+
+                            <div class="campo-formulario">
+
+                                <label for="utmHemisferio">
+                                    Hemisfério
+                                </label>
+
+                                <select id="utmHemisferio">
+
+                                    <option value="S">
+                                        Sul
+                                    </option>
+
+                                    <option value="N">
+                                        Norte
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            id="converterUtmLatLon"
+                            class="botao-calcular botao-converter"
+                        >
+                            Converter coordenadas
+                        </button>
+
+                    </div>
+
+
+                    <!-- LAT/LON PARA UTM -->
+
+                    <div
+                        id="formLatLonUtm"
+                        class="form-conversao"
+                    >
+
+                        <div class="grade-campos-conversor">
+
+                            <div class="campo-formulario">
+
+                                <label for="latitude">
+                                    Latitude
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="latitude"
+                                    placeholder="Ex.: -16.6809"
+                                >
+
+                            </div>
+
+
+                            <div class="campo-formulario">
+
+                                <label for="longitude">
+                                    Longitude
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="longitude"
+                                    placeholder="Ex.: -49.2533"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            id="converterLatLonUtm"
+                            class="botao-calcular botao-converter"
+                        >
+                            Converter coordenadas
+                        </button>
+
+                    </div>
+
+
+                    <!-- RESULTADO -->
+
+                    <div
+                        id="resultadoConversor"
+                        class="resultado-conversor"
+                    >
+
+                        <div class="resultado-item">
+
+                            <span id="labelResultado1">
+                                Latitude
+                            </span>
+
+                            <strong id="resultadoCoord1">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="resultado-item">
+
+                            <span id="labelResultado2">
+                                Longitude
+                            </span>
+
+                            <strong id="resultadoCoord2">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="resultado-item">
+
+                            <span id="labelResultado3">
+                                Referência
+                            </span>
+
+                            <strong id="resultadoCoord3">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <p
+                        id="mensagemConversor"
+                        class="mensagem-calculadora"
+                    ></p>
+
+
+                    <div class="aviso-calculadora">
+
+                        <strong>Atenção:</strong>
+
+                        utilize sempre o sistema de referência
+                        correspondente aos dados originais.
+                        Esta ferramenta é destinada a conversões
+                        auxiliares e não substitui processamento
+                        geodésico especializado.
 
                     </div>
 
@@ -594,7 +930,9 @@
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 </main>
 
