@@ -789,21 +789,585 @@ footer p:first-child {
 
 .secao-ferramentas {
     padding: 90px 8%;
-    background-color: #f5f8fb;
+    background: #f4f7fa;
+}
+
+.secao-ferramentas .container-secao {
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 
+/* =====================================================
+   ESTRUTURA DA ÁREA
+===================================================== */
+
 .grade-ferramentas {
     display: grid;
+    grid-template-columns: 280px 1fr;
 
-    grid-template-columns:
-        300px minmax(0, 1fr);
-
-    gap: 35px;
+    gap: 32px;
 
     align-items: start;
 }
 
+
+/* =====================================================
+   MENU LATERAL
+===================================================== */
+
+.lista-ferramentas {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+.lista-ferramentas button {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 18px;
+
+    margin: 0;
+
+    text-align: left;
+
+    border-radius: 10px;
+
+    border: 1px solid #dce4ea;
+
+    font-family: inherit;
+
+    box-shadow: none;
+}
+
+
+.ferramenta-selecionada {
+    background: #ffffff;
+
+    color: var(--grafite);
+
+    border-color: var(--azul) !important;
+
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.05) !important;
+}
+
+
+.ferramenta-bloqueada {
+    background: #edf1f4;
+
+    color: #7f8992;
+
+    cursor: default;
+}
+
+
+.ferramenta-bloqueada:hover {
+    background: #edf1f4;
+
+    color: #7f8992;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+.icone-ferramenta {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: var(--azul-claro);
+
+    color: var(--azul-escuro);
+
+    border-radius: 8px;
+
+    font-size: 22px;
+
+    font-weight: 700;
+}
+
+
+.lista-ferramentas strong {
+    display: block;
+
+    font-size: 15px;
+
+    margin-bottom: 3px;
+}
+
+
+.lista-ferramentas small {
+    display: block;
+
+    font-size: 12px;
+
+    font-weight: normal;
+}
+
+
+/* =====================================================
+   PAINEL DA CALCULADORA
+===================================================== */
+
+.calculadora-area {
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    border: 1px solid #dde5eb;
+
+    padding: 36px;
+
+    box-shadow:
+        0 10px 35px rgba(15, 35, 55, 0.06);
+}
+
+
+.calculadora-topo {
+    padding-bottom: 24px;
+
+    margin-bottom: 24px;
+
+    border-bottom: 1px solid #e7edf1;
+}
+
+
+.calculadora-etiqueta {
+    display: block;
+
+    color: var(--azul);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 7px;
+}
+
+
+.calculadora-topo h3 {
+    margin: 0 0 6px;
+
+    color: var(--preto);
+
+    font-size: 28px;
+}
+
+
+.calculadora-topo p {
+    color: var(--cinza-escuro);
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   TABELA DE COORDENADAS
+===================================================== */
+
+.cabecalho-coordenadas,
+.linha-coordenada {
+    display: grid;
+
+    grid-template-columns:
+        70px minmax(140px, 1fr)
+        minmax(140px, 1fr) 42px;
+
+    gap: 10px;
+
+    align-items: center;
+}
+
+
+.cabecalho-coordenadas {
+    padding: 0 3px 9px;
+
+    color: var(--cinza-escuro);
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.linha-coordenada {
+    margin-bottom: 10px;
+}
+
+
+.numero-ponto {
+    min-height: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--azul-claro);
+
+    color: var(--azul-escuro);
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.linha-coordenada input {
+    width: 100%;
+    height: 46px;
+
+    padding: 0 13px;
+
+    border: 1px solid #cbd5dc;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: var(--grafite);
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+
+.linha-coordenada input:focus {
+    border-color: var(--azul);
+
+    box-shadow:
+        0 0 0 3px rgba(21, 158, 228, 0.10);
+}
+
+
+.botao-remover {
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+    margin: 0;
+
+    border: 1px solid #dfe5e9;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: #929aa1;
+
+    font-size: 21px;
+
+    box-shadow: none;
+}
+
+
+.botao-remover:hover {
+    background: #fff1f1;
+
+    color: #b72c2c;
+
+    border-color: #e6aaaa;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =====================================================
+   AÇÕES
+===================================================== */
+
+.acoes-calculadora {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-top: 22px;
+
+    margin-bottom: 30px;
+}
+
+
+.botao-adicionar,
+.botao-calcular {
+    min-width: 170px;
+
+    padding: 13px 20px;
+
+    margin: 0;
+
+    border-radius: 7px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.botao-adicionar {
+    background: #ffffff;
+
+    color: var(--grafite);
+
+    border: 1px solid #bfcbd3;
+}
+
+
+.botao-adicionar:hover {
+    background: #f3f6f8;
+
+    border-color: #9aa8b2;
+
+    color: var(--preto);
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+.botao-calcular {
+    background: var(--azul);
+
+    color: #ffffff;
+
+    border: 1px solid var(--azul);
+}
+
+
+.botao-calcular:hover {
+    background: var(--azul-escuro);
+
+    border-color: var(--azul-escuro);
+}
+
+
+/* =====================================================
+   RESULTADOS
+===================================================== */
+
+.resultado-area {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 14px;
+
+    padding-top: 26px;
+
+    border-top: 1px solid #e6ebef;
+}
+
+
+.resultado-item {
+    padding: 21px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8fbfd,
+            #f1f6f9
+        );
+
+    border: 1px solid #e2e9ee;
+
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+
+.resultado-item span {
+    display: block;
+
+    color: var(--cinza-escuro);
+
+    font-size: 12px;
+}
+
+
+.resultado-item strong {
+    display: block;
+
+    margin: 5px 0 2px;
+
+    color: var(--preto);
+
+    font-size: 25px;
+
+    line-height: 1.2;
+}
+
+
+.resultado-item small {
+    color: var(--cinza-escuro);
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   MENSAGEM E AVISO
+===================================================== */
+
+.mensagem-calculadora {
+    min-height: 24px;
+
+    margin-top: 12px;
+
+    color: var(--azul-escuro);
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.aviso-calculadora {
+    margin-top: 18px;
+
+    padding: 15px 17px;
+
+    background: #f6f8fa;
+
+    border-left: 4px solid var(--azul);
+
+    border-radius: 4px;
+
+    color: var(--cinza-escuro);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
+
+@media (max-width: 950px) {
+
+    .grade-ferramentas {
+        grid-template-columns: 1fr;
+    }
+
+
+    .lista-ferramentas {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+}
+
+
+@media (max-width: 760px) {
+
+    .secao-ferramentas {
+        padding: 70px 6%;
+    }
+
+
+    .lista-ferramentas {
+        grid-template-columns: 1fr;
+    }
+
+
+    .calculadora-area {
+        padding: 24px;
+    }
+
+
+    .cabecalho-coordenadas {
+        display: none;
+    }
+
+
+    .linha-coordenada {
+        grid-template-columns:
+            45px 1fr 1fr 40px;
+    }
+
+
+    .resultado-area {
+        grid-template-columns: 1fr;
+    }
+
+
+    .acoes-calculadora {
+        flex-direction: column;
+    }
+
+
+    .botao-adicionar,
+    .botao-calcular {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 560px) {
+
+    .linha-coordenada {
+        grid-template-columns:
+            45px 1fr 40px;
+
+        grid-template-areas:
+            "ponto este remover"
+            ". norte .";
+    }
+
+
+    .numero-ponto {
+        grid-area: ponto;
+    }
+
+
+    .coordenada-e {
+        grid-area: este;
+    }
+
+
+    .coordenada-n {
+        grid-area: norte;
+    }
+
+
+    .botao-remover {
+        grid-area: remover;
+    }
+}
 
 /* =====================================================
    MENU DAS FERRAMENTAS
