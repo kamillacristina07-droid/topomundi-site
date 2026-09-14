@@ -7,6 +7,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // =================================================
+    // FUNÇÕES GERAIS
+    // =================================================
+
+    function lerNumero(valor) {
+
+        return parseFloat(
+            String(valor)
+                .trim()
+                .replace(",", ".")
+        );
+    }
+
+
+    function formatarNumero(
+        valor,
+        casas = 2
+    ) {
+
+        return valor.toLocaleString(
+            "pt-BR",
+            {
+                minimumFractionDigits: casas,
+                maximumFractionDigits: casas
+            }
+        );
+    }
+
+
+    function grausParaRad(graus) {
+
+        return graus *
+            Math.PI / 180;
+    }
+
+
+    function radParaGraus(rad) {
+
+        return rad *
+            180 / Math.PI;
+    }
+
+
+
+    // =================================================
     // MENU MOBILE
     // =================================================
 
@@ -23,15 +67,22 @@ document.addEventListener("DOMContentLoaded", function () {
             "click",
             function () {
 
-                menuPrincipal.classList.toggle("ativo");
+                menuPrincipal.classList.toggle(
+                    "ativo"
+                );
+
 
                 const aberto =
-                    menuPrincipal.classList.contains("ativo");
+                    menuPrincipal.classList.contains(
+                        "ativo"
+                    );
+
 
                 menuMobile.setAttribute(
                     "aria-expanded",
                     aberto
                 );
+
 
                 menuMobile.textContent =
                     aberto ? "✕" : "☰";
@@ -40,80 +91,111 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         document
-            .querySelectorAll(".menu-principal a")
+            .querySelectorAll(
+                ".menu-principal a"
+            )
             .forEach(function (link) {
 
                 link.addEventListener(
                     "click",
                     function () {
 
-                        menuPrincipal.classList.remove("ativo");
+                        menuPrincipal
+                            .classList
+                            .remove("ativo");
+
 
                         menuMobile.setAttribute(
                             "aria-expanded",
                             "false"
                         );
 
-                        menuMobile.textContent = "☰";
+
+                        menuMobile.textContent =
+                            "☰";
                     }
                 );
 
             });
-
     }
 
 
+
     // =================================================
-    // SELEÇÃO DAS FERRAMENTAS
+    // TROCA DAS FERRAMENTAS
     // =================================================
 
-   const botoesFerramenta =
-    document.querySelectorAll(".ferramenta-menu");
-
-const paineisFerramenta =
-    document.querySelectorAll(".painel-ferramenta");
-
-
-botoesFerramenta.forEach(function (botao) {
-
-    botao.addEventListener("click", function () {
-
-        const ferramenta =
-            botao.getAttribute("data-ferramenta");
+    const botoesFerramenta =
+        document.querySelectorAll(
+            ".ferramenta-menu"
+        );
 
 
-        botoesFerramenta.forEach(function (item) {
-
-            item.classList.remove("ativa");
-
-        });
-
-
-        paineisFerramenta.forEach(function (painel) {
-
-            painel.classList.remove("ativo");
-
-        });
+    const paineisFerramenta =
+        document.querySelectorAll(
+            ".painel-ferramenta"
+        );
 
 
-        botao.classList.add("ativa");
+    botoesFerramenta.forEach(
+        function (botao) {
+
+            botao.addEventListener(
+                "click",
+                function () {
+
+                    botoesFerramenta
+                        .forEach(function (item) {
+
+                            item.classList.remove(
+                                "ativa"
+                            );
+
+                        });
 
 
-        const painelSelecionado =
-            document.getElementById(
-                "painel-" + ferramenta
+                    paineisFerramenta
+                        .forEach(function (painel) {
+
+                            painel.classList.remove(
+                                "ativo"
+                            );
+
+                        });
+
+
+                    botao.classList.add(
+                        "ativa"
+                    );
+
+
+                    const ferramenta =
+                        botao.getAttribute(
+                            "data-ferramenta"
+                        );
+
+
+                    const painelSelecionado =
+                        document.getElementById(
+                            "painel-" +
+                            ferramenta
+                        );
+
+
+                    if (painelSelecionado) {
+
+                        painelSelecionado
+                            .classList
+                            .add("ativo");
+
+                    }
+
+                }
             );
 
-
-        if (painelSelecionado) {
-
-            painelSelecionado.classList.add("ativo");
-
         }
+    );
 
-    });
-
-});
 
 
     // =================================================
@@ -121,25 +203,45 @@ botoesFerramenta.forEach(function (botao) {
     // =================================================
 
     const listaPontos =
-        document.getElementById("listaPontos");
+        document.getElementById(
+            "listaPontos"
+        );
+
 
     const botaoAdicionar =
-        document.getElementById("adicionarPonto");
+        document.getElementById(
+            "adicionarPonto"
+        );
 
-    const botaoCalcular =
-        document.getElementById("calcularArea");
+
+    const botaoCalcularArea =
+        document.getElementById(
+            "calcularArea"
+        );
+
 
     const resultadoM2 =
-        document.getElementById("resultadoM2");
+        document.getElementById(
+            "resultadoM2"
+        );
+
 
     const resultadoHa =
-        document.getElementById("resultadoHa");
+        document.getElementById(
+            "resultadoHa"
+        );
+
 
     const resultadoPerimetro =
-        document.getElementById("resultadoPerimetro");
+        document.getElementById(
+            "resultadoPerimetro"
+        );
+
 
     const mensagemCalculadora =
-        document.getElementById("mensagemCalculadora");
+        document.getElementById(
+            "mensagemCalculadora"
+        );
 
 
     function atualizarNumeracao() {
@@ -156,9 +258,13 @@ botoesFerramenta.forEach(function (botao) {
         linhas.forEach(
             function (linha, indice) {
 
-                linha
-                    .querySelector(".numero-ponto")
-                    .textContent =
+                const ponto =
+                    linha.querySelector(
+                        ".numero-ponto"
+                    );
+
+
+                ponto.textContent =
                     "P" + (indice + 1);
 
             }
@@ -169,7 +275,9 @@ botoesFerramenta.forEach(function (botao) {
     function adicionarPonto() {
 
         const linha =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
 
         linha.className =
@@ -197,7 +305,6 @@ botoesFerramenta.forEach(function (botao) {
             <button
                 type="button"
                 class="botao-remover"
-                aria-label="Remover ponto"
             >
                 ×
             </button>
@@ -205,26 +312,16 @@ botoesFerramenta.forEach(function (botao) {
         `;
 
 
-        listaPontos.appendChild(linha);
+        listaPontos.appendChild(
+            linha
+        );
+
 
         atualizarNumeracao();
 
-        mensagemCalculadora.textContent = "";
-    }
 
-
-    function formatarNumero(
-        valor,
-        casas = 2
-    ) {
-
-        return valor.toLocaleString(
-            "pt-BR",
-            {
-                minimumFractionDigits: casas,
-                maximumFractionDigits: casas
-            }
-        );
+        mensagemCalculadora.textContent =
+            "";
     }
 
 
@@ -276,6 +373,15 @@ botoesFerramenta.forEach(function (botao) {
         }
 
 
+        if (pontos.length < 3) {
+
+            mensagemCalculadora.textContent =
+                "São necessários pelo menos três pontos.";
+
+            return;
+        }
+
+
         let somaArea = 0;
         let perimetro = 0;
 
@@ -292,20 +398,27 @@ botoesFerramenta.forEach(function (botao) {
 
             const proximo =
                 pontos[
-                    (i + 1) % pontos.length
+                    (i + 1) %
+                    pontos.length
                 ];
 
 
             somaArea +=
-                atual.x * proximo.y -
-                proximo.x * atual.y;
+                atual.x *
+                proximo.y
+                -
+                proximo.x *
+                atual.y;
 
 
             const dx =
-                proximo.x - atual.x;
+                proximo.x -
+                atual.x;
+
 
             const dy =
-                proximo.y - atual.y;
+                proximo.y -
+                atual.y;
 
 
             perimetro +=
@@ -317,11 +430,15 @@ botoesFerramenta.forEach(function (botao) {
 
 
         const area =
-            Math.abs(somaArea) / 2;
+            Math.abs(
+                somaArea
+            ) / 2;
 
 
         resultadoM2.textContent =
-            formatarNumero(area);
+            formatarNumero(
+                area
+            );
 
 
         resultadoHa.textContent =
@@ -332,7 +449,9 @@ botoesFerramenta.forEach(function (botao) {
 
 
         resultadoPerimetro.textContent =
-            formatarNumero(perimetro);
+            formatarNumero(
+                perimetro
+            );
 
 
         mensagemCalculadora.textContent =
@@ -340,7 +459,10 @@ botoesFerramenta.forEach(function (botao) {
     }
 
 
-    if (botaoAdicionar) {
+    if (
+        botaoAdicionar &&
+        listaPontos
+    ) {
 
         botaoAdicionar.addEventListener(
             "click",
@@ -350,9 +472,12 @@ botoesFerramenta.forEach(function (botao) {
     }
 
 
-    if (botaoCalcular) {
+    if (
+        botaoCalcularArea &&
+        listaPontos
+    ) {
 
-        botaoCalcular.addEventListener(
+        botaoCalcularArea.addEventListener(
             "click",
             calcularArea
         );
@@ -367,18 +492,23 @@ botoesFerramenta.forEach(function (botao) {
             function (evento) {
 
                 if (
-                    evento.target.classList.contains(
-                        "botao-remover"
-                    )
+                    evento.target
+                        .classList
+                        .contains(
+                            "botao-remover"
+                        )
                 ) {
 
                     const linhas =
-                        listaPontos.querySelectorAll(
-                            ".linha-coordenada"
-                        );
+                        listaPontos
+                            .querySelectorAll(
+                                ".linha-coordenada"
+                            );
 
 
-                    if (linhas.length <= 3) {
+                    if (
+                        linhas.length <= 3
+                    ) {
 
                         mensagemCalculadora.textContent =
                             "É necessário manter pelo menos três pontos.";
@@ -388,7 +518,9 @@ botoesFerramenta.forEach(function (botao) {
 
 
                     evento.target
-                        .closest(".linha-coordenada")
+                        .closest(
+                            ".linha-coordenada"
+                        )
                         .remove();
 
 
@@ -405,8 +537,9 @@ botoesFerramenta.forEach(function (botao) {
     atualizarNumeracao();
 
 
+
     // =================================================
-    // CONVERSOR - ALTERNÂNCIA
+    // CONVERSOR - TROCA DE MODALIDADE
     // =================================================
 
     const botoesConversao =
@@ -434,40 +567,51 @@ botoesFerramenta.forEach(function (botao) {
                 "click",
                 function () {
 
-                    botoesConversao.forEach(
-                        b =>
-                            b.classList.remove("ativo")
-                    );
+                    botoesConversao
+                        .forEach(function (item) {
+
+                            item.classList.remove(
+                                "ativo"
+                            );
+
+                        });
 
 
-                    botao.classList.add("ativo");
-
-
-                    const tipo =
-                        botao.dataset.tipo;
-
-
-                    formUtmLatLon.classList.remove(
+                    botao.classList.add(
                         "ativo"
                     );
 
 
-                    formLatLonUtm.classList.remove(
-                        "ativo"
-                    );
+                    if (
+                        !formUtmLatLon ||
+                        !formLatLonUtm
+                    ) return;
 
 
-                    if (tipo === "utm-latlon") {
+                    formUtmLatLon
+                        .classList
+                        .remove("ativo");
 
-                        formUtmLatLon.classList.add(
-                            "ativo"
-                        );
+
+                    formLatLonUtm
+                        .classList
+                        .remove("ativo");
+
+
+                    if (
+                        botao.dataset.tipo ===
+                        "utm-latlon"
+                    ) {
+
+                        formUtmLatLon
+                            .classList
+                            .add("ativo");
 
                     } else {
 
-                        formLatLonUtm.classList.add(
-                            "ativo"
-                        );
+                        formLatLonUtm
+                            .classList
+                            .add("ativo");
 
                     }
 
@@ -478,19 +622,28 @@ botoesFerramenta.forEach(function (botao) {
     );
 
 
+
     // =================================================
-    // ELIPSOIDES
+    // ELIPSOIDE
     // =================================================
 
     function obterElipsoide() {
 
-        const datum =
+        const campoDatum =
             document.getElementById(
                 "datum"
-            ).value;
+            );
 
 
-        if (datum === "sirgas2000") {
+        const datum =
+            campoDatum
+                ? campoDatum.value
+                : "sirgas2000";
+
+
+        if (
+            datum === "sirgas2000"
+        ) {
 
             return {
                 a: 6378137.0,
@@ -506,29 +659,6 @@ botoesFerramenta.forEach(function (botao) {
         };
     }
 
-
-    function lerNumero(valor) {
-
-        return parseFloat(
-            String(valor)
-                .trim()
-                .replace(",", ".")
-        );
-    }
-
-
-    function grausParaRad(graus) {
-
-        return graus *
-            Math.PI / 180;
-    }
-
-
-    function radParaGraus(rad) {
-
-        return rad *
-            180 / Math.PI;
-    }
 
 
     // =================================================
@@ -546,15 +676,18 @@ botoesFerramenta.forEach(function (botao) {
 
 
         const f =
-            1 / elipsoide.invF;
+            1 /
+            elipsoide.invF;
 
 
         const e2 =
-            f * (2 - f);
+            f *
+            (2 - f);
 
 
         const ep2 =
-            e2 / (1 - e2);
+            e2 /
+            (1 - e2);
 
 
         const k0 =
@@ -562,26 +695,33 @@ botoesFerramenta.forEach(function (botao) {
 
 
         const lat =
-            grausParaRad(latitude);
+            grausParaRad(
+                latitude
+            );
 
 
         const lon =
-            grausParaRad(longitude);
+            grausParaRad(
+                longitude
+            );
 
 
         let zona =
             Math.floor(
-                (longitude + 180) / 6
+                (longitude + 180) /
+                6
             ) + 1;
 
 
         if (zona < 1) zona = 1;
+
         if (zona > 60) zona = 60;
 
 
         const lon0 =
             grausParaRad(
-                (zona - 1) * 6 -
+                (zona - 1) *
+                6 -
                 180 +
                 3
             );
@@ -628,7 +768,9 @@ botoesFerramenta.forEach(function (botao) {
                     3 * e2 ** 2 / 32 +
                     45 * e2 ** 3 / 1024
                 ) *
-                Math.sin(2 * lat)
+                Math.sin(
+                    2 * lat
+                )
 
                 +
 
@@ -636,14 +778,19 @@ botoesFerramenta.forEach(function (botao) {
                     15 * e2 ** 2 / 256 +
                     45 * e2 ** 3 / 1024
                 ) *
-                Math.sin(4 * lat)
+                Math.sin(
+                    4 * lat
+                )
 
                 -
 
                 (
-                    35 * e2 ** 3 / 3072
+                    35 * e2 ** 3 /
+                    3072
                 ) *
-                Math.sin(6 * lat)
+                Math.sin(
+                    6 * lat
+                )
             );
 
 
@@ -651,14 +798,17 @@ botoesFerramenta.forEach(function (botao) {
             k0 *
             N *
             (
-                A +
+                A
+
+                +
 
                 (
                     1 -
                     T +
                     C
                 ) *
-                A ** 3 / 6
+                A ** 3 /
+                6
 
                 +
 
@@ -669,16 +819,19 @@ botoesFerramenta.forEach(function (botao) {
                     72 * C -
                     58 * ep2
                 ) *
-                A ** 5 / 120
+                A ** 5 /
+                120
             )
-
-            + 500000;
+            +
+            500000;
 
 
         let Nnorth =
             k0 *
             (
-                M +
+                M
+
+                +
 
                 N *
                 Math.tan(lat) *
@@ -693,7 +846,8 @@ botoesFerramenta.forEach(function (botao) {
                         9 * C +
                         4 * C ** 2
                     ) *
-                    A ** 4 / 24
+                    A ** 4 /
+                    24
 
                     +
 
@@ -704,7 +858,8 @@ botoesFerramenta.forEach(function (botao) {
                         600 * C -
                         330 * ep2
                     ) *
-                    A ** 6 / 720
+                    A ** 6 /
+                    720
                 )
             );
 
@@ -715,7 +870,9 @@ botoesFerramenta.forEach(function (botao) {
                 : "N";
 
 
-        if (latitude < 0) {
+        if (
+            latitude < 0
+        ) {
 
             Nnorth +=
                 10000000;
@@ -732,8 +889,10 @@ botoesFerramenta.forEach(function (botao) {
             zona: zona,
 
             hemisferio: hemisferio
+
         };
     }
+
 
 
     // =================================================
@@ -753,15 +912,18 @@ botoesFerramenta.forEach(function (botao) {
 
 
         const f =
-            1 / elipsoide.invF;
+            1 /
+            elipsoide.invF;
 
 
         const e2 =
-            f * (2 - f);
+            f *
+            (2 - f);
 
 
         const ep2 =
-            e2 / (1 - e2);
+            e2 /
+            (1 - e2);
 
 
         const k0 =
@@ -769,7 +931,8 @@ botoesFerramenta.forEach(function (botao) {
 
 
         const x =
-            easting - 500000;
+            easting -
+            500000;
 
 
         let y =
@@ -777,8 +940,9 @@ botoesFerramenta.forEach(function (botao) {
 
 
         if (
-            hemisferio.toUpperCase()
-            === "S"
+            hemisferio
+                .toUpperCase()
+                === "S"
         ) {
 
             y -=
@@ -789,14 +953,16 @@ botoesFerramenta.forEach(function (botao) {
 
         const lon0 =
             grausParaRad(
-                (zona - 1) * 6 -
+                (zona - 1) *
+                6 -
                 180 +
                 3
             );
 
 
         const M =
-            y / k0;
+            y /
+            k0;
 
 
         const mu =
@@ -815,12 +981,16 @@ botoesFerramenta.forEach(function (botao) {
         const e1 =
             (
                 1 -
-                Math.sqrt(1 - e2)
+                Math.sqrt(
+                    1 - e2
+                )
             )
             /
             (
                 1 +
-                Math.sqrt(1 - e2)
+                Math.sqrt(
+                    1 - e2
+                )
             );
 
 
@@ -831,31 +1001,44 @@ botoesFerramenta.forEach(function (botao) {
 
             (
                 3 * e1 / 2 -
-                27 * e1 ** 3 / 32
+                27 * e1 ** 3 /
+                32
             ) *
-            Math.sin(2 * mu)
+            Math.sin(
+                2 * mu
+            )
 
             +
 
             (
-                21 * e1 ** 2 / 16 -
-                55 * e1 ** 4 / 32
+                21 * e1 ** 2 /
+                16 -
+                55 * e1 ** 4 /
+                32
             ) *
-            Math.sin(4 * mu)
+            Math.sin(
+                4 * mu
+            )
 
             +
 
             (
-                151 * e1 ** 3 / 96
+                151 * e1 ** 3 /
+                96
             ) *
-            Math.sin(6 * mu)
+            Math.sin(
+                6 * mu
+            )
 
             +
 
             (
-                1097 * e1 ** 4 / 512
+                1097 * e1 ** 4 /
+                512
             ) *
-            Math.sin(8 * mu);
+            Math.sin(
+                8 * mu
+            );
 
 
         const N1 =
@@ -863,17 +1046,23 @@ botoesFerramenta.forEach(function (botao) {
             Math.sqrt(
                 1 -
                 e2 *
-                Math.sin(phi1) ** 2
+                Math.sin(
+                    phi1
+                ) ** 2
             );
 
 
         const T1 =
-            Math.tan(phi1) ** 2;
+            Math.tan(
+                phi1
+            ) ** 2;
 
 
         const C1 =
             ep2 *
-            Math.cos(phi1) ** 2;
+            Math.cos(
+                phi1
+            ) ** 2;
 
 
         const R1 =
@@ -883,7 +1072,9 @@ botoesFerramenta.forEach(function (botao) {
             (
                 1 -
                 e2 *
-                Math.sin(phi1) ** 2
+                Math.sin(
+                    phi1
+                ) ** 2
             ) ** 1.5;
 
 
@@ -899,7 +1090,9 @@ botoesFerramenta.forEach(function (botao) {
 
             (
                 N1 *
-                Math.tan(phi1)
+                Math.tan(
+                    phi1
+                )
                 /
                 R1
             )
@@ -907,7 +1100,8 @@ botoesFerramenta.forEach(function (botao) {
             *
 
             (
-                D ** 2 / 2
+                D ** 2 /
+                2
 
                 -
 
@@ -918,7 +1112,8 @@ botoesFerramenta.forEach(function (botao) {
                     4 * C1 ** 2 -
                     9 * ep2
                 ) *
-                D ** 4 / 24
+                D ** 4 /
+                24
 
                 +
 
@@ -930,7 +1125,8 @@ botoesFerramenta.forEach(function (botao) {
                     252 * ep2 -
                     3 * C1 ** 2
                 ) *
-                D ** 6 / 720
+                D ** 6 /
+                720
             );
 
 
@@ -949,7 +1145,8 @@ botoesFerramenta.forEach(function (botao) {
                     2 * T1 +
                     C1
                 ) *
-                D ** 3 / 6
+                D ** 3 /
+                6
 
                 +
 
@@ -961,26 +1158,35 @@ botoesFerramenta.forEach(function (botao) {
                     8 * ep2 +
                     24 * T1 ** 2
                 ) *
-                D ** 5 / 120
+                D ** 5 /
+                120
             )
 
             /
-            Math.cos(phi1);
+            Math.cos(
+                phi1
+            );
 
 
         return {
 
             latitude:
-                radParaGraus(latitude),
+                radParaGraus(
+                    latitude
+                ),
 
             longitude:
-                radParaGraus(longitude)
+                radParaGraus(
+                    longitude
+                )
+
         };
     }
 
 
+
     // =================================================
-    // RESULTADOS
+    // EVENTOS DO CONVERSOR
     // =================================================
 
     const resultadoCoord1 =
@@ -1025,46 +1231,56 @@ botoesFerramenta.forEach(function (botao) {
         );
 
 
-    // =================================================
-    // UTM → LAT/LON EVENTO
-    // =================================================
-
-    document
-        .getElementById(
+    const converterUtm =
+        document.getElementById(
             "converterUtmLatLon"
-        )
-        .addEventListener(
+        );
+
+
+    const converterLatLon =
+        document.getElementById(
+            "converterLatLonUtm"
+        );
+
+
+    if (converterUtm) {
+
+        converterUtm.addEventListener(
             "click",
             function () {
 
                 const E =
                     lerNumero(
-                        document.getElementById(
-                            "utmE"
-                        ).value
+                        document
+                            .getElementById(
+                                "utmE"
+                            ).value
                     );
 
 
                 const N =
                     lerNumero(
-                        document.getElementById(
-                            "utmN"
-                        ).value
+                        document
+                            .getElementById(
+                                "utmN"
+                            ).value
                     );
 
 
                 const zona =
                     parseInt(
-                        document.getElementById(
-                            "utmFuso"
-                        ).value
+                        document
+                            .getElementById(
+                                "utmFuso"
+                            ).value
                     );
 
 
                 const hemisferio =
-                    document.getElementById(
-                        "utmHemisferio"
-                    ).value;
+                    document
+                        .getElementById(
+                            "utmHemisferio"
+                        ).value;
 
 
                 if (
@@ -1074,7 +1290,7 @@ botoesFerramenta.forEach(function (botao) {
                 ) {
 
                     mensagemConversor.textContent =
-                        "Preencha corretamente as coordenadas e o fuso.";
+                        "Preencha corretamente os campos.";
 
                     return;
                 }
@@ -1086,7 +1302,7 @@ botoesFerramenta.forEach(function (botao) {
                 ) {
 
                     mensagemConversor.textContent =
-                        "O fuso UTM deve estar entre 1 e 60.";
+                        "O fuso deve estar entre 1 e 60.";
 
                     return;
                 }
@@ -1115,14 +1331,18 @@ botoesFerramenta.forEach(function (botao) {
 
 
                 resultadoCoord1.textContent =
-                    resultado.latitude
-                        .toFixed(8) +
+                    resultado
+                        .latitude
+                        .toFixed(8)
+                    +
                     "°";
 
 
                 resultadoCoord2.textContent =
-                    resultado.longitude
-                        .toFixed(8) +
+                    resultado
+                        .longitude
+                        .toFixed(8)
+                    +
                     "°";
 
 
@@ -1137,38 +1357,40 @@ botoesFerramenta.forEach(function (botao) {
             }
         );
 
+    }
 
-    // =================================================
-    // LAT/LON → UTM EVENTO
-    // =================================================
 
-    document
-        .getElementById(
-            "converterLatLonUtm"
-        )
-        .addEventListener(
+    if (converterLatLon) {
+
+        converterLatLon.addEventListener(
             "click",
             function () {
 
                 const latitude =
                     lerNumero(
-                        document.getElementById(
-                            "latitude"
-                        ).value
+                        document
+                            .getElementById(
+                                "latitude"
+                            ).value
                     );
 
 
                 const longitude =
                     lerNumero(
-                        document.getElementById(
-                            "longitude"
-                        ).value
+                        document
+                            .getElementById(
+                                "longitude"
+                            ).value
                     );
 
 
                 if (
-                    Number.isNaN(latitude) ||
-                    Number.isNaN(longitude)
+                    Number.isNaN(
+                        latitude
+                    ) ||
+                    Number.isNaN(
+                        longitude
+                    )
                 ) {
 
                     mensagemConversor.textContent =
@@ -1246,5 +1468,322 @@ botoesFerramenta.forEach(function (botao) {
 
             }
         );
+
+    }
+
+
+
+    // =================================================
+    // CALCULADORA DE DECLIVIDADE
+    // =================================================
+
+    const botaoDeclividade =
+        document.getElementById(
+            "calcularDeclividade"
+        );
+
+
+    const botaoLimparDeclividade =
+        document.getElementById(
+            "limparDeclividade"
+        );
+
+
+    const resultadoDesnivel =
+        document.getElementById(
+            "resultadoDesnivel"
+        );
+
+
+    const resultadoDeclividade =
+        document.getElementById(
+            "resultadoDeclividade"
+        );
+
+
+    const resultadoAngulo =
+        document.getElementById(
+            "resultadoAngulo"
+        );
+
+
+    const resultadoRazao =
+        document.getElementById(
+            "resultadoRazao"
+        );
+
+
+    const resultadoSentido =
+        document.getElementById(
+            "resultadoSentido"
+        );
+
+
+    const mensagemDeclividade =
+        document.getElementById(
+            "mensagemDeclividade"
+        );
+
+
+    function calcularDeclividade() {
+
+        const cotaInicial =
+            lerNumero(
+                document
+                    .getElementById(
+                        "cotaInicial"
+                    ).value
+            );
+
+
+        const cotaFinal =
+            lerNumero(
+                document
+                    .getElementById(
+                        "cotaFinal"
+                    ).value
+            );
+
+
+        const distancia =
+            lerNumero(
+                document
+                    .getElementById(
+                        "distanciaHorizontal"
+                    ).value
+            );
+
+
+        mensagemDeclividade.textContent =
+            "";
+
+
+        if (
+            Number.isNaN(
+                cotaInicial
+            ) ||
+            Number.isNaN(
+                cotaFinal
+            ) ||
+            Number.isNaN(
+                distancia
+            )
+        ) {
+
+            mensagemDeclividade.textContent =
+                "Preencha todos os campos.";
+
+            return;
+        }
+
+
+        if (
+            distancia <= 0
+        ) {
+
+            mensagemDeclividade.textContent =
+                "A distância horizontal deve ser maior que zero.";
+
+            return;
+        }
+
+
+        const desnivel =
+            cotaFinal -
+            cotaInicial;
+
+
+        const declividade =
+            (
+                desnivel /
+                distancia
+            ) *
+            100;
+
+
+        const angulo =
+            radParaGraus(
+                Math.atan(
+                    desnivel /
+                    distancia
+                )
+            );
+
+
+        resultadoDesnivel.textContent =
+            (
+                desnivel > 0
+                    ? "+"
+                    : ""
+            )
+            +
+            formatarNumero(
+                desnivel,
+                2
+            );
+
+
+        resultadoDeclividade.textContent =
+            (
+                declividade > 0
+                    ? "+"
+                    : ""
+            )
+            +
+            formatarNumero(
+                declividade,
+                2
+            );
+
+
+        resultadoAngulo.textContent =
+            (
+                angulo > 0
+                    ? "+"
+                    : ""
+            )
+            +
+            formatarNumero(
+                angulo,
+                2
+            )
+            +
+            "°";
+
+
+        if (
+            Math.abs(
+                desnivel
+            ) < 0.000001
+        ) {
+
+            resultadoRazao.textContent =
+                "Plano";
+
+
+            resultadoSentido.textContent =
+                "Trecho praticamente plano.";
+
+
+            resultadoSentido.className =
+                "resultado-sentido plano";
+
+        } else {
+
+            const razao =
+                distancia /
+                Math.abs(
+                    desnivel
+                );
+
+
+            resultadoRazao.textContent =
+                "1 : " +
+                formatarNumero(
+                    razao,
+                    2
+                );
+
+
+            if (
+                desnivel > 0
+            ) {
+
+                resultadoSentido.textContent =
+                    "Trecho ascendente: a cota final é superior à cota inicial.";
+
+
+                resultadoSentido.className =
+                    "resultado-sentido ascendente";
+
+            } else {
+
+                resultadoSentido.textContent =
+                    "Trecho descendente: a cota final é inferior à cota inicial.";
+
+
+                resultadoSentido.className =
+                    "resultado-sentido descendente";
+
+            }
+
+        }
+
+
+        mensagemDeclividade.textContent =
+            "Cálculo realizado com sucesso.";
+    }
+
+
+    function limparDeclividade() {
+
+        document
+            .getElementById(
+                "cotaInicial"
+            ).value = "";
+
+
+        document
+            .getElementById(
+                "cotaFinal"
+            ).value = "";
+
+
+        document
+            .getElementById(
+                "distanciaHorizontal"
+            ).value = "";
+
+
+        resultadoDesnivel.textContent =
+            "—";
+
+
+        resultadoDeclividade.textContent =
+            "—";
+
+
+        resultadoAngulo.textContent =
+            "—";
+
+
+        resultadoRazao.textContent =
+            "—";
+
+
+        resultadoSentido.textContent =
+            "Informe os dados para calcular.";
+
+
+        resultadoSentido.className =
+            "resultado-sentido";
+
+
+        mensagemDeclividade.textContent =
+            "";
+    }
+
+
+    if (botaoDeclividade) {
+
+        botaoDeclividade.addEventListener(
+            "click",
+            calcularDeclividade
+        );
+
+    }
+
+
+    if (
+        botaoLimparDeclividade
+    ) {
+
+        botaoLimparDeclividade
+            .addEventListener(
+                "click",
+                limparDeclividade
+            );
+
+    }
 
 });
