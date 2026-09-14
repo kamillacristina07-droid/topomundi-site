@@ -304,8 +304,7 @@
     <!-- =====================================================
          FERRAMENTAS ONLINE
     ====================================================== -->
-
-    <section id="ferramentas" class="secao-ferramentas">
+<section id="ferramentas" class="secao-ferramentas">
 
     <div class="container-secao">
 
@@ -315,14 +314,12 @@
                 FERRAMENTAS ONLINE
             </span>
 
-            <h2>
-                Utilitários para Topografia
-            </h2>
+            <h2>Utilitários para Topografia</h2>
 
             <p>
-                Ferramentas gratuitas desenvolvidas para auxiliar
-                profissionais, estudantes e clientes em cálculos
-                e conversões topográficas.
+                Ferramentas gratuitas para auxiliar profissionais,
+                estudantes e clientes em cálculos e conversões
+                topográficas.
             </p>
 
         </div>
@@ -330,462 +327,315 @@
 
         <div class="grade-ferramentas">
 
-            <!-- MENU DAS FERRAMENTAS -->
+            <!-- ======================================
+                 MENU LATERAL
+            ======================================= -->
 
             <div class="lista-ferramentas">
 
                 <button
-                    class="ferramenta-menu ativa"
                     type="button"
+                    class="ferramenta-menu ativa"
                     data-ferramenta="area"
                 >
-
-                    <span class="icone-ferramenta">
-                        ▱
-                    </span>
+                    <span class="icone-ferramenta">▱</span>
 
                     <span>
-                        <strong>
-                            Calculadora de Área
-                        </strong>
-
-                        <small>
-                            Área e perímetro por coordenadas
-                        </small>
+                        <strong>Calculadora de Área</strong>
+                        <small>Área e perímetro por coordenadas</small>
                     </span>
-
                 </button>
 
 
                 <button
-                    class="ferramenta-menu"
                     type="button"
+                    class="ferramenta-menu"
                     data-ferramenta="coordenadas"
                 >
-
-                    <span class="icone-ferramenta">
-                        ⇄
-                    </span>
+                    <span class="icone-ferramenta">⇄</span>
 
                     <span>
-                        <strong>
-                            Conversor de Coordenadas
-                        </strong>
-
-                        <small>
-                            UTM ↔ Latitude/Longitude
-                        </small>
+                        <strong>Conversor de Coordenadas</strong>
+                        <small>UTM ↔ Latitude/Longitude</small>
                     </span>
-
                 </button>
 
 
                 <button
-                    class="ferramenta-bloqueada"
                     type="button"
+                    class="ferramenta-bloqueada"
                 >
-
-                    <span class="icone-ferramenta">
-                        ∠
-                    </span>
+                    <span class="icone-ferramenta">∠</span>
 
                     <span>
-                        <strong>
-                            Calculadora de Declividade
-                        </strong>
-
-                        <small>
-                            Em breve
-                        </small>
+                        <strong>Calculadora de Declividade</strong>
+                        <small>Em breve</small>
                     </span>
-
                 </button>
 
             </div>
 
 
-            <!-- =========================================
-                 CALCULADORA DE ÁREA
-            ========================================== -->
+            <!-- ======================================
+                 ÁREA DOS PAINÉIS
+            ======================================= -->
 
-            <div
-                class="painel-ferramenta ativo"
-                id="painel-area"
-            >
-
-                <div class="calculadora-area">
-
-                    <div class="calculadora-topo">
-
-                        <span class="calculadora-etiqueta">
-                            FERRAMENTA GRATUITA
-                        </span>
-
-                        <h3>
-                            Calculadora de Área
-                        </h3>
-
-                        <p>
-                            Informe as coordenadas dos vértices
-                            sequencialmente.
-                        </p>
-
-                    </div>
+            <div class="area-paineis-ferramentas">
 
 
-                    <div class="cabecalho-coordenadas">
+                <!-- ==================================
+                     CALCULADORA DE ÁREA
+                =================================== -->
 
-                        <span>Ponto</span>
-                        <span>Coordenada E</span>
-                        <span>Coordenada N</span>
-                        <span></span>
+                <div
+                    class="painel-ferramenta ativo"
+                    id="painel-area"
+                >
 
-                    </div>
+                    <div class="calculadora-area">
 
+                        <div class="calculadora-topo">
 
-                    <div id="listaPontos">
-
-                        <div class="linha-coordenada">
-
-                            <span class="numero-ponto">
-                                P1
+                            <span class="calculadora-etiqueta">
+                                FERRAMENTA GRATUITA
                             </span>
 
-                            <input
-                                type="number"
-                                step="any"
-                                class="coordenada-e"
-                                placeholder="Ex.: 682000.00"
-                            >
+                            <h3>Calculadora de Área</h3>
 
-                            <input
-                                type="number"
-                                step="any"
-                                class="coordenada-n"
-                                placeholder="Ex.: 8154000.00"
-                            >
+                            <p>
+                                Informe as coordenadas dos vértices
+                                sequencialmente.
+                            </p>
+
+                        </div>
+
+
+                        <div class="cabecalho-coordenadas">
+
+                            <span>Ponto</span>
+                            <span>Coordenada E</span>
+                            <span>Coordenada N</span>
+                            <span></span>
+
+                        </div>
+
+
+                        <div id="listaPontos">
+
+                            <div class="linha-coordenada">
+
+                                <span class="numero-ponto">P1</span>
+
+                                <input
+                                    type="number"
+                                    step="any"
+                                    class="coordenada-e"
+                                    placeholder="Ex.: 682000.00"
+                                >
+
+                                <input
+                                    type="number"
+                                    step="any"
+                                    class="coordenada-n"
+                                    placeholder="Ex.: 8154000.00"
+                                >
+
+                                <button
+                                    type="button"
+                                    class="botao-remover"
+                                >
+                                    ×
+                                </button>
+
+                            </div>
+
+
+                            <div class="linha-coordenada">
+
+                                <span class="numero-ponto">P2</span>
+
+                                <input
+                                    type="number"
+                                    step="any"
+                                    class="coordenada-e"
+                                    placeholder="Ex.: 682500.00"
+                                >
+
+                                <input
+                                    type="number"
+                                    step="any"
+                                    class="coordenada-n"
+                                    placeholder="Ex.: 8154000.00"
+                                >
+
+                                <button
+                                    type="button"
+                                    class="botao-remover"
+                                >
+                                    ×
+                                </button>
+
+                            </div>
+
+
+                            <div class="linha-coordenada">
+
+                                <span class="numero-ponto">P3</span>
+
+                                <input
+                                    type="number"
+                                    step="any"
+                                    class="coordenada-e"
+                                    placeholder="Ex.: 682500.00"
+                                >
+
+                                <input
+                                    type="number"
+                                    step="any"
+                                    class="coordenada-n"
+                                    placeholder="Ex.: 8154500.00"
+                                >
+
+                                <button
+                                    type="button"
+                                    class="botao-remover"
+                                >
+                                    ×
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="acoes-calculadora">
 
                             <button
                                 type="button"
-                                class="botao-remover"
-                                aria-label="Remover ponto"
+                                id="adicionarPonto"
+                                class="botao-adicionar"
                             >
-                                ×
+                                + Adicionar ponto
+                            </button>
+
+                            <button
+                                type="button"
+                                id="calcularArea"
+                                class="botao-calcular"
+                            >
+                                Calcular área
                             </button>
 
                         </div>
 
 
-                        <div class="linha-coordenada">
+                        <div class="resultado-area">
 
-                            <span class="numero-ponto">
-                                P2
-                            </span>
+                            <div class="resultado-item">
+                                <span>Área</span>
+                                <strong id="resultadoM2">—</strong>
+                                <small>m²</small>
+                            </div>
 
-                            <input
-                                type="number"
-                                step="any"
-                                class="coordenada-e"
-                                placeholder="Ex.: 682500.00"
-                            >
+                            <div class="resultado-item">
+                                <span>Área</span>
+                                <strong id="resultadoHa">—</strong>
+                                <small>hectares</small>
+                            </div>
 
-                            <input
-                                type="number"
-                                step="any"
-                                class="coordenada-n"
-                                placeholder="Ex.: 8154000.00"
-                            >
-
-                            <button
-                                type="button"
-                                class="botao-remover"
-                                aria-label="Remover ponto"
-                            >
-                                ×
-                            </button>
+                            <div class="resultado-item">
+                                <span>Perímetro</span>
+                                <strong id="resultadoPerimetro">—</strong>
+                                <small>metros</small>
+                            </div>
 
                         </div>
 
 
-                        <div class="linha-coordenada">
+                        <p
+                            id="mensagemCalculadora"
+                            class="mensagem-calculadora"
+                        ></p>
 
-                            <span class="numero-ponto">
-                                P3
-                            </span>
 
-                            <input
-                                type="number"
-                                step="any"
-                                class="coordenada-e"
-                                placeholder="Ex.: 682500.00"
-                            >
+                        <div class="aviso-calculadora">
 
-                            <input
-                                type="number"
-                                step="any"
-                                class="coordenada-n"
-                                placeholder="Ex.: 8154500.00"
-                            >
-
-                            <button
-                                type="button"
-                                class="botao-remover"
-                                aria-label="Remover ponto"
-                            >
-                                ×
-                            </button>
+                            <strong>Atenção:</strong>
+                            esta ferramenta fornece cálculo geométrico
+                            auxiliar e não substitui levantamento,
+                            conferência ou responsabilidade técnica.
 
                         </div>
-
-                    </div>
-
-
-                    <div class="acoes-calculadora">
-
-                        <button
-                            type="button"
-                            id="adicionarPonto"
-                            class="botao-adicionar"
-                        >
-                            + Adicionar ponto
-                        </button>
-
-                        <button
-                            type="button"
-                            id="calcularArea"
-                            class="botao-calcular"
-                        >
-                            Calcular área
-                        </button>
-
-                    </div>
-
-
-                    <div class="resultado-area">
-
-                        <div class="resultado-item">
-
-                            <span>
-                                Área
-                            </span>
-
-                            <strong id="resultadoM2">
-                                —
-                            </strong>
-
-                            <small>
-                                m²
-                            </small>
-
-                        </div>
-
-
-                        <div class="resultado-item">
-
-                            <span>
-                                Área
-                            </span>
-
-                            <strong id="resultadoHa">
-                                —
-                            </strong>
-
-                            <small>
-                                hectares
-                            </small>
-
-                        </div>
-
-
-                        <div class="resultado-item">
-
-                            <span>
-                                Perímetro
-                            </span>
-
-                            <strong id="resultadoPerimetro">
-                                —
-                            </strong>
-
-                            <small>
-                                metros
-                            </small>
-
-                        </div>
-
-                    </div>
-
-
-                    <p
-                        id="mensagemCalculadora"
-                        class="mensagem-calculadora"
-                    ></p>
-
-
-                    <div class="aviso-calculadora">
-
-                        <strong>Atenção:</strong>
-
-                        esta ferramenta fornece cálculo geométrico
-                        auxiliar e não substitui levantamento,
-                        conferência ou responsabilidade técnica.
 
                     </div>
 
                 </div>
 
-            </div>
 
+                <!-- ==================================
+                     CONVERSOR DE COORDENADAS
+                =================================== -->
 
-            <!-- =========================================
-                 CONVERSOR DE COORDENADAS
-            ========================================== -->
+                <div
+                    class="painel-ferramenta"
+                    id="painel-coordenadas"
+                >
 
-            <div
-                class="painel-ferramenta"
-                id="painel-coordenadas"
-            >
+                    <div class="calculadora-area">
 
-                <div class="calculadora-area">
+                        <div class="calculadora-topo">
 
-                    <div class="calculadora-topo">
+                            <span class="calculadora-etiqueta">
+                                FERRAMENTA GRATUITA
+                            </span>
 
-                        <span class="calculadora-etiqueta">
-                            FERRAMENTA GRATUITA
-                        </span>
+                            <h3>Conversor de Coordenadas</h3>
 
-                        <h3>
-                            Conversor de Coordenadas
-                        </h3>
-
-                        <p>
-                            Converta coordenadas entre UTM
-                            e Latitude/Longitude.
-                        </p>
-
-                    </div>
-
-
-                    <!-- TIPO DE CONVERSÃO -->
-
-                    <div class="tipo-conversao">
-
-                        <button
-                            type="button"
-                            class="botao-tipo-conversao ativo"
-                            data-tipo="utm-latlon"
-                        >
-                            UTM → Latitude/Longitude
-                        </button>
-
-                        <button
-                            type="button"
-                            class="botao-tipo-conversao"
-                            data-tipo="latlon-utm"
-                        >
-                            Latitude/Longitude → UTM
-                        </button>
-
-                    </div>
-
-
-                    <!-- CONFIGURAÇÕES -->
-
-                    <div class="grade-configuracao">
-
-                        <div class="campo-formulario">
-
-                            <label for="datum">
-                                Datum
-                            </label>
-
-                            <select id="datum">
-
-                                <option value="sirgas2000">
-                                    SIRGAS 2000
-                                </option>
-
-                                <option value="wgs84">
-                                    WGS84
-                                </option>
-
-                            </select>
+                            <p>
+                                Converta coordenadas entre UTM e
+                                Latitude/Longitude.
+                            </p>
 
                         </div>
 
-                    </div>
+
+                        <div class="tipo-conversao">
+
+                            <button
+                                type="button"
+                                class="botao-tipo-conversao ativo"
+                                data-tipo="utm-latlon"
+                            >
+                                UTM → Latitude/Longitude
+                            </button>
+
+                            <button
+                                type="button"
+                                class="botao-tipo-conversao"
+                                data-tipo="latlon-utm"
+                            >
+                                Latitude/Longitude → UTM
+                            </button>
+
+                        </div>
 
 
-                    <!-- UTM PARA LAT/LON -->
-
-                    <div
-                        id="formUtmLatLon"
-                        class="form-conversao ativo"
-                    >
-
-                        <div class="grade-campos-conversor">
-
-                            <div class="campo-formulario">
-
-                                <label for="utmE">
-                                    Coordenada E
-                                </label>
-
-                                <input
-                                    type="text"
-                                    id="utmE"
-                                    placeholder="Ex.: 682000"
-                                >
-
-                            </div>
-
+                        <div class="grade-configuracao">
 
                             <div class="campo-formulario">
 
-                                <label for="utmN">
-                                    Coordenada N
+                                <label for="datum">
+                                    Datum
                                 </label>
 
-                                <input
-                                    type="text"
-                                    id="utmN"
-                                    placeholder="Ex.: 8154000"
-                                >
+                                <select id="datum">
 
-                            </div>
-
-
-                            <div class="campo-formulario">
-
-                                <label for="utmFuso">
-                                    Fuso UTM
-                                </label>
-
-                                <input
-                                    type="number"
-                                    id="utmFuso"
-                                    min="1"
-                                    max="60"
-                                    value="22"
-                                >
-
-                            </div>
-
-
-                            <div class="campo-formulario">
-
-                                <label for="utmHemisferio">
-                                    Hemisfério
-                                </label>
-
-                                <select id="utmHemisferio">
-
-                                    <option value="S">
-                                        Sul
+                                    <option value="sirgas2000">
+                                        SIRGAS 2000
                                     </option>
 
-                                    <option value="N">
-                                        Norte
+                                    <option value="wgs84">
+                                        WGS84
                                     </option>
 
                                 </select>
@@ -795,132 +645,204 @@
                         </div>
 
 
-                        <button
-                            type="button"
-                            id="converterUtmLatLon"
-                            class="botao-calcular botao-converter"
+                        <!-- UTM → LAT/LON -->
+
+                        <div
+                            id="formUtmLatLon"
+                            class="form-conversao ativo"
                         >
-                            Converter coordenadas
-                        </button>
 
-                    </div>
+                            <div class="grade-campos-conversor">
+
+                                <div class="campo-formulario">
+
+                                    <label for="utmE">
+                                        Coordenada E
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="utmE"
+                                        placeholder="Ex.: 682000"
+                                    >
+
+                                </div>
 
 
-                    <!-- LAT/LON PARA UTM -->
+                                <div class="campo-formulario">
 
-                    <div
-                        id="formLatLonUtm"
-                        class="form-conversao"
-                    >
+                                    <label for="utmN">
+                                        Coordenada N
+                                    </label>
 
-                        <div class="grade-campos-conversor">
+                                    <input
+                                        type="text"
+                                        id="utmN"
+                                        placeholder="Ex.: 8154000"
+                                    >
 
-                            <div class="campo-formulario">
+                                </div>
 
-                                <label for="latitude">
+
+                                <div class="campo-formulario">
+
+                                    <label for="utmFuso">
+                                        Fuso UTM
+                                    </label>
+
+                                    <input
+                                        type="number"
+                                        id="utmFuso"
+                                        min="1"
+                                        max="60"
+                                        value="22"
+                                    >
+
+                                </div>
+
+
+                                <div class="campo-formulario">
+
+                                    <label for="utmHemisferio">
+                                        Hemisfério
+                                    </label>
+
+                                    <select id="utmHemisferio">
+
+                                        <option value="S">
+                                            Sul
+                                        </option>
+
+                                        <option value="N">
+                                            Norte
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                id="converterUtmLatLon"
+                                class="botao-calcular botao-converter"
+                            >
+                                Converter coordenadas
+                            </button>
+
+                        </div>
+
+
+                        <!-- LAT/LON → UTM -->
+
+                        <div
+                            id="formLatLonUtm"
+                            class="form-conversao"
+                        >
+
+                            <div class="grade-campos-conversor">
+
+                                <div class="campo-formulario">
+
+                                    <label for="latitude">
+                                        Latitude
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="latitude"
+                                        placeholder="Ex.: -16.6809"
+                                    >
+
+                                </div>
+
+
+                                <div class="campo-formulario">
+
+                                    <label for="longitude">
+                                        Longitude
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="longitude"
+                                        placeholder="Ex.: -49.2533"
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                id="converterLatLonUtm"
+                                class="botao-calcular botao-converter"
+                            >
+                                Converter coordenadas
+                            </button>
+
+                        </div>
+
+
+                        <div class="resultado-conversor">
+
+                            <div class="resultado-item">
+
+                                <span id="labelResultado1">
                                     Latitude
-                                </label>
+                                </span>
 
-                                <input
-                                    type="text"
-                                    id="latitude"
-                                    placeholder="Ex.: -16.6809"
-                                >
+                                <strong id="resultadoCoord1">
+                                    —
+                                </strong>
 
                             </div>
 
 
-                            <div class="campo-formulario">
+                            <div class="resultado-item">
 
-                                <label for="longitude">
+                                <span id="labelResultado2">
                                     Longitude
-                                </label>
+                                </span>
 
-                                <input
-                                    type="text"
-                                    id="longitude"
-                                    placeholder="Ex.: -49.2533"
-                                >
+                                <strong id="resultadoCoord2">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="resultado-item">
+
+                                <span id="labelResultado3">
+                                    Fuso / Hemisfério
+                                </span>
+
+                                <strong id="resultadoCoord3">
+                                    —
+                                </strong>
 
                             </div>
 
                         </div>
 
 
-                        <button
-                            type="button"
-                            id="converterLatLonUtm"
-                            class="botao-calcular botao-converter"
-                        >
-                            Converter coordenadas
-                        </button>
-
-                    </div>
+                        <p
+                            id="mensagemConversor"
+                            class="mensagem-calculadora"
+                        ></p>
 
 
-                    <!-- RESULTADO -->
+                        <div class="aviso-calculadora">
 
-                    <div
-                        id="resultadoConversor"
-                        class="resultado-conversor"
-                    >
-
-                        <div class="resultado-item">
-
-                            <span id="labelResultado1">
-                                Latitude
-                            </span>
-
-                            <strong id="resultadoCoord1">
-                                —
-                            </strong>
+                            <strong>Atenção:</strong>
+                            utilize sempre o sistema de referência
+                            correspondente aos dados originais.
 
                         </div>
-
-
-                        <div class="resultado-item">
-
-                            <span id="labelResultado2">
-                                Longitude
-                            </span>
-
-                            <strong id="resultadoCoord2">
-                                —
-                            </strong>
-
-                        </div>
-
-
-                        <div class="resultado-item">
-
-                            <span id="labelResultado3">
-                                Referência
-                            </span>
-
-                            <strong id="resultadoCoord3">
-                                —
-                            </strong>
-
-                        </div>
-
-                    </div>
-
-
-                    <p
-                        id="mensagemConversor"
-                        class="mensagem-calculadora"
-                    ></p>
-
-
-                    <div class="aviso-calculadora">
-
-                        <strong>Atenção:</strong>
-
-                        utilize sempre o sistema de referência
-                        correspondente aos dados originais.
-                        Esta ferramenta é destinada a conversões
-                        auxiliares e não substitui processamento
-                        geodésico especializado.
 
                     </div>
 
@@ -933,6 +855,7 @@
     </div>
 
 </section>
+   
 
 </main>
 
