@@ -2113,3 +2113,257 @@ footer p:first-child {
         width: 100%;
     }
 }
+/* =====================================================
+   CORREÇÃO FINAL - PAINÉIS DAS FERRAMENTAS
+===================================================== */
+
+.area-paineis-ferramentas {
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* Por padrão nenhum painel aparece */
+
+.painel-ferramenta {
+    display: none !important;
+    width: 100%;
+}
+
+
+/* Somente o painel ativo aparece */
+
+.painel-ferramenta.ativo {
+    display: block !important;
+}
+
+
+/* =====================================================
+   BOTÕES DO MENU DE FERRAMENTAS
+===================================================== */
+
+.ferramenta-menu {
+    background-color: #ffffff;
+    color: var(--grafite);
+
+    cursor: pointer;
+}
+
+
+.ferramenta-menu.ativa {
+    border-color: var(--azul) !important;
+
+    background-color: #ffffff;
+
+    box-shadow:
+        0 8px 24px
+        rgba(0, 0, 0, 0.06) !important;
+}
+
+
+/* =====================================================
+   BOTÕES DE CONVERSÃO
+===================================================== */
+
+.tipo-conversao {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 12px;
+
+    margin-bottom: 28px;
+}
+
+
+.botao-tipo-conversao {
+    width: 100%;
+
+    margin: 0;
+
+    padding: 14px 16px;
+
+    border-radius: 8px;
+
+    border: 1px solid #d5dde3;
+
+    background-color: #f4f7f9;
+
+    color: var(--grafite);
+
+    box-shadow: none;
+}
+
+
+.botao-tipo-conversao:hover {
+    background-color: #eaf5fc;
+
+    color: var(--azul-escuro);
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+.botao-tipo-conversao.ativo {
+    background-color: var(--azul);
+
+    border-color: var(--azul);
+
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   FORMULÁRIOS DO CONVERSOR
+===================================================== */
+
+.form-conversao {
+    display: none;
+}
+
+
+.form-conversao.ativo {
+    display: block;
+}
+
+
+.grade-configuracao {
+    display: grid;
+
+    grid-template-columns:
+        minmax(200px, 320px);
+
+    gap: 15px;
+
+    margin-bottom: 22px;
+}
+
+
+.grade-campos-conversor {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-bottom: 22px;
+}
+
+
+.campo-formulario {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.campo-formulario label {
+    color: var(--grafite);
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+.campo-formulario input,
+.campo-formulario select {
+    width: 100%;
+
+    height: 46px;
+
+    padding: 0 13px;
+
+    background: #ffffff;
+
+    border: 1px solid #cbd5dc;
+
+    border-radius: 7px;
+
+    color: var(--grafite);
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+
+.campo-formulario input:focus,
+.campo-formulario select:focus {
+    border-color: var(--azul);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(21, 158, 228, 0.10);
+}
+
+
+.botao-converter {
+    min-width: 230px;
+
+    margin: 0 0 30px;
+}
+
+
+/* =====================================================
+   RESULTADOS DO CONVERSOR
+===================================================== */
+
+.resultado-conversor {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+
+    padding-top: 26px;
+
+    border-top:
+        1px solid #e6ebef;
+}
+
+
+.resultado-conversor
+.resultado-item strong {
+    font-size: 20px;
+
+    word-break: break-word;
+}
+
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 760px) {
+
+    .tipo-conversao {
+        grid-template-columns: 1fr;
+    }
+
+
+    .grade-campos-conversor {
+        grid-template-columns: 1fr;
+    }
+
+
+    .resultado-conversor {
+        grid-template-columns: 1fr;
+    }
+
+
+    .botao-converter {
+        width: 100%;
+
+        min-width: 0;
+    }
+}
