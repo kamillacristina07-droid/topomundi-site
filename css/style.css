@@ -1,10 +1,5 @@
 /* =====================================================
    TOPOMUNDI TOPOGRAFIA LTDA
-   Identidade visual baseada no logotipo aprovado
-===================================================== */
-
-/* =====================================================
-   PALETA DA MARCA
 ===================================================== */
 
 :root {
@@ -23,7 +18,7 @@
 
 
 /* =====================================================
-   CONFIGURAÇÕES GERAIS
+   CONFIGURAÇÃO GERAL
 ===================================================== */
 
 * {
@@ -38,40 +33,31 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-
     background-color: var(--branco);
     color: var(--grafite);
-
     line-height: 1.6;
 }
 
 
 /* =====================================================
-   CABEÇALHO E MENU
+   CABEÇALHO
 ===================================================== */
 
 .cabecalho {
     width: 100%;
-
     background-color: var(--branco);
-
     border-bottom: 1px solid #e5e7eb;
 
     position: sticky;
     top: 0;
-
     z-index: 1000;
 }
-
-
-/* Container interno do cabeçalho */
 
 .container-menu {
     width: 100%;
     max-width: 1400px;
 
     margin: 0 auto;
-
     padding: 14px 5%;
 
     display: flex;
@@ -83,35 +69,30 @@ body {
 
 
 /* =====================================================
-   LOGOTIPO
+   LOGO
 ===================================================== */
 
 .logo-area {
     display: flex;
     align-items: center;
-
     text-decoration: none;
-
     flex-shrink: 0;
 }
 
 .logo-topomundi {
     display: block;
-
     width: 230px;
     max-width: 100%;
-
     height: auto;
 }
 
 
 /* =====================================================
-   MENU PRINCIPAL
+   MENU
 ===================================================== */
 
 .menu-principal {
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -139,9 +120,6 @@ body {
     color: var(--azul);
 }
 
-
-/* Linha azul abaixo do item */
-
 .menu-principal a::after {
     content: "";
 
@@ -164,7 +142,7 @@ body {
 
 
 /* =====================================================
-   BOTÃO SOLICITAR ORÇAMENTO
+   BOTÃO ORÇAMENTO DO MENU
 ===================================================== */
 
 .botao-orcamento {
@@ -180,17 +158,14 @@ body {
 
     text-decoration: none;
 
-    border-radius: 5px;
+    border-radius: 6px;
 
     font-size: 14px;
     font-weight: 700;
 
     white-space: nowrap;
 
-    transition:
-        background-color 0.3s,
-        transform 0.3s,
-        box-shadow 0.3s;
+    transition: 0.3s;
 }
 
 .botao-orcamento:hover {
@@ -198,12 +173,12 @@ body {
 
     transform: translateY(-2px);
 
-    box-shadow: 0 6px 16px rgba(21, 158, 228, 0.20);
+    box-shadow: 0 6px 16px rgba(21, 158, 228, 0.25);
 }
 
 
 /* =====================================================
-   BOTÃO DO MENU MOBILE
+   MENU MOBILE
 ===================================================== */
 
 .menu-mobile {
@@ -227,100 +202,101 @@ body {
 }
 
 .menu-mobile:hover {
-    background: transparent;
-
-    transform: none;
-
-    box-shadow: none;
-
     color: var(--azul);
 }
 
 
 /* =====================================================
-   CONTEÚDO PRINCIPAL
+   HERO
 ===================================================== */
 
-main {
-    min-height: 600px;
-}
-
-
-/* =====================================================
-   SEÇÃO INICIAL / HERO
-===================================================== */
-
-main section {
+.hero {
     position: relative;
 
-    min-height: 560px;
+    min-height: 650px;
 
     display: flex;
 
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: flex-start;
+    align-items: center;
 
     padding: 90px 8%;
 
+    overflow: hidden;
+
     background:
         linear-gradient(
-            120deg,
-            #ffffff 0%,
-            #f6f9fb 55%,
-            #eaf5fb 100%
+            90deg,
+            rgba(0, 0, 0, 0.78) 0%,
+            rgba(0, 0, 0, 0.62) 45%,
+            rgba(0, 0, 0, 0.18) 100%
+        ),
+        url("../imagens/topografia-hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.20)
         );
+
+    pointer-events: none;
 }
 
 
-/* Detalhe azul acima do título */
+.hero-conteudo {
+    position: relative;
 
-main section::before {
-    content: "";
+    z-index: 2;
 
-    width: 75px;
-    height: 4px;
-
-    background-color: var(--azul);
-
-    margin-bottom: 25px;
-
-    border-radius: 5px;
+    max-width: 780px;
 }
 
 
-/* =====================================================
-   TÍTULO PRINCIPAL
-===================================================== */
+.hero-etiqueta {
+    display: inline-block;
 
-main h2 {
-    max-width: 760px;
+    margin-bottom: 20px;
 
-    color: var(--preto);
+    color: var(--azul);
 
-    font-size: 50px;
+    font-size: 13px;
     font-weight: 700;
 
-    line-height: 1.1;
-
-    margin-bottom: 22px;
-
-    letter-spacing: -1px;
+    letter-spacing: 4px;
 }
 
 
-/* =====================================================
-   TEXTO PRINCIPAL
-===================================================== */
+.hero h1 {
+    color: var(--branco);
 
-main section > p {
-    max-width: 650px;
+    font-size: 56px;
+    font-weight: 700;
 
-    color: var(--cinza-escuro);
+    line-height: 1.08;
 
-    font-size: 18px;
+    letter-spacing: -1.5px;
+
+    margin-bottom: 24px;
+}
+
+
+.hero p {
+    max-width: 680px;
+
+    color: #f1f5f9;
+
+    font-size: 19px;
 
     line-height: 1.7;
 
@@ -329,63 +305,121 @@ main section > p {
 
 
 /* =====================================================
-   BOTÕES GERAIS
+   BOTÕES DO HERO
 ===================================================== */
 
-button {
-    padding: 15px 28px;
+.hero-botoes {
+    display: flex;
 
-    margin-right: 10px;
-    margin-bottom: 10px;
+    flex-wrap: wrap;
 
-    border: 2px solid var(--azul);
+    gap: 12px;
 
-    border-radius: 5px;
+    margin-bottom: 45px;
+}
 
-    background-color: var(--azul);
-    color: var(--branco);
+
+.botao-primario,
+.botao-secundario {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px 26px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
 
     font-size: 15px;
     font-weight: 700;
 
-    cursor: pointer;
-
-    transition:
-        background-color 0.3s,
-        border-color 0.3s,
-        transform 0.3s,
-        box-shadow 0.3s;
+    transition: 0.3s;
 }
 
-button:hover {
+
+.botao-primario {
+    background-color: var(--azul);
+
+    color: var(--branco);
+
+    border: 2px solid var(--azul);
+}
+
+
+.botao-primario:hover {
     background-color: var(--azul-escuro);
 
     border-color: var(--azul-escuro);
 
     transform: translateY(-2px);
-
-    box-shadow: 0 8px 18px rgba(21, 158, 228, 0.20);
 }
 
 
-/* Segundo botão da página inicial */
-
-button + button {
+.botao-secundario {
     background-color: transparent;
-
-    color: var(--grafite);
-
-    border-color: var(--grafite);
-}
-
-button + button:hover {
-    background-color: var(--grafite);
-
-    border-color: var(--grafite);
 
     color: var(--branco);
 
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    border: 2px solid rgba(255, 255, 255, 0.80);
+}
+
+
+.botao-secundario:hover {
+    background-color: var(--branco);
+
+    color: var(--preto);
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   DIFERENCIAIS
+===================================================== */
+
+.hero-diferenciais {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(130px, 1fr));
+
+    gap: 18px;
+
+    max-width: 900px;
+}
+
+
+.diferencial {
+    padding: 16px 18px;
+
+    border-left: 3px solid var(--azul);
+
+    background-color:
+        rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(4px);
+}
+
+
+.diferencial strong {
+    display: block;
+
+    color: var(--branco);
+
+    font-size: 15px;
+
+    margin-bottom: 3px;
+}
+
+
+.diferencial span {
+    display: block;
+
+    color: #d8dee6;
+
+    font-size: 12px;
 }
 
 
@@ -403,6 +437,7 @@ footer {
     border-top: 4px solid var(--azul);
 }
 
+
 footer p {
     margin: 5px 0;
 
@@ -410,6 +445,7 @@ footer p {
 
     font-size: 14px;
 }
+
 
 footer p:first-child {
     color: var(--branco);
@@ -421,7 +457,7 @@ footer p:first-child {
 
 
 /* =====================================================
-   RESPONSIVIDADE - TABLET
+   TABLET
 ===================================================== */
 
 @media (max-width: 1050px) {
@@ -481,37 +517,38 @@ footer p:first-child {
     .menu-principal a::after {
         display: none;
     }
+
+    .hero-diferenciais {
+        grid-template-columns:
+            repeat(2, minmax(140px, 1fr));
+    }
 }
 
 
 /* =====================================================
-   RESPONSIVIDADE - CELULAR
+   CELULAR
 ===================================================== */
 
 @media (max-width: 768px) {
 
-    main section {
-        min-height: 500px;
+    .hero {
+        min-height: 620px;
 
-        padding: 65px 6%;
+        padding: 70px 6%;
+
+        background-position: 65% center;
     }
 
-    main h2 {
-        font-size: 36px;
-
-        line-height: 1.15;
+    .hero h1 {
+        font-size: 40px;
     }
 
-    main section > p {
-        font-size: 16px;
+    .hero p {
+        font-size: 17px;
     }
 
-    button {
-        width: 100%;
-
-        margin-right: 0;
-
-        margin-bottom: 12px;
+    .hero-diferenciais {
+        grid-template-columns: 1fr 1fr;
     }
 
     footer {
@@ -521,7 +558,7 @@ footer p:first-child {
 
 
 /* =====================================================
-   RESPONSIVIDADE - CELULARES PEQUENOS
+   CELULARES PEQUENOS
 ===================================================== */
 
 @media (max-width: 600px) {
@@ -537,17 +574,27 @@ footer p:first-child {
     .menu-mobile {
         margin-left: auto;
     }
-}
 
-
-@media (max-width: 480px) {
-
-    main h2 {
-        font-size: 31px;
+    .hero h1 {
+        font-size: 34px;
     }
 
-    main section {
-        padding-top: 55px;
-        padding-bottom: 55px;
+    .hero-etiqueta {
+        font-size: 11px;
+
+        letter-spacing: 3px;
+    }
+
+    .hero-botoes {
+        flex-direction: column;
+    }
+
+    .botao-primario,
+    .botao-secundario {
+        width: 100%;
+    }
+
+    .hero-diferenciais {
+        grid-template-columns: 1fr;
     }
 }
