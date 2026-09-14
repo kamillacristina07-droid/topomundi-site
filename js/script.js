@@ -67,53 +67,53 @@ document.addEventListener("DOMContentLoaded", function () {
     // SELEÇÃO DAS FERRAMENTAS
     // =================================================
 
-    const botoesFerramenta =
-        document.querySelectorAll(
-            ".ferramenta-menu"
-        );
+   const botoesFerramenta =
+    document.querySelectorAll(".ferramenta-menu");
+
+const paineisFerramenta =
+    document.querySelectorAll(".painel-ferramenta");
 
 
-    botoesFerramenta.forEach(
-        function (botao) {
+botoesFerramenta.forEach(function (botao) {
 
-            botao.addEventListener(
-                "click",
-                function () {
+    botao.addEventListener("click", function () {
 
-                    botoesFerramenta.forEach(
-                        b => b.classList.remove("ativa")
-                    );
-
-                    botao.classList.add("ativa");
+        const ferramenta =
+            botao.getAttribute("data-ferramenta");
 
 
-                    document
-                        .querySelectorAll(".painel-ferramenta")
-                        .forEach(
-                            painel =>
-                                painel.classList.remove("ativo")
-                        );
+        botoesFerramenta.forEach(function (item) {
+
+            item.classList.remove("ativa");
+
+        });
 
 
-                    const ferramenta =
-                        botao.dataset.ferramenta;
+        paineisFerramenta.forEach(function (painel) {
+
+            painel.classList.remove("ativo");
+
+        });
 
 
-                    const painel =
-                        document.getElementById(
-                            "painel-" + ferramenta
-                        );
+        botao.classList.add("ativa");
 
 
-                    if (painel) {
-                        painel.classList.add("ativo");
-                    }
-
-                }
+        const painelSelecionado =
+            document.getElementById(
+                "painel-" + ferramenta
             );
 
+
+        if (painelSelecionado) {
+
+            painelSelecionado.classList.add("ativo");
+
         }
-    );
+
+    });
+
+});
 
 
     // =================================================
