@@ -361,17 +361,18 @@
                 </button>
 
 
-                <button
-                    type="button"
-                    class="ferramenta-bloqueada"
-                >
-                    <span class="icone-ferramenta">∠</span>
+<button
+    type="button"
+    class="ferramenta-menu"
+    data-ferramenta="declividade"
+>
+    <span class="icone-ferramenta">∠</span>
 
-                    <span>
-                        <strong>Calculadora de Declividade</strong>
-                        <small>Em breve</small>
-                    </span>
-                </button>
+    <span>
+        <strong>Calculadora de Declividade</strong>
+        <small>Desnível, %, graus e razão</small>
+    </span>
+</button>
 
             </div>
 
@@ -570,7 +571,205 @@
                     </div>
 
                 </div>
+<!-- ==================================
+     CALCULADORA DE DECLIVIDADE
+=================================== -->
 
+<div
+    class="painel-ferramenta"
+    id="painel-declividade"
+>
+
+    <div class="calculadora-area">
+
+        <div class="calculadora-topo">
+
+            <span class="calculadora-etiqueta">
+                FERRAMENTA GRATUITA
+            </span>
+
+            <h3>
+                Calculadora de Declividade
+            </h3>
+
+            <p>
+                Informe as cotas inicial e final e a
+                distância horizontal entre os pontos.
+            </p>
+
+        </div>
+
+
+        <div class="grade-campos-declividade">
+
+            <div class="campo-formulario">
+
+                <label for="cotaInicial">
+                    Cota inicial (m)
+                </label>
+
+                <input
+                    type="text"
+                    id="cotaInicial"
+                    placeholder="Ex.: 750,00"
+                >
+
+            </div>
+
+
+            <div class="campo-formulario">
+
+                <label for="cotaFinal">
+                    Cota final (m)
+                </label>
+
+                <input
+                    type="text"
+                    id="cotaFinal"
+                    placeholder="Ex.: 765,00"
+                >
+
+            </div>
+
+
+            <div class="campo-formulario">
+
+                <label for="distanciaHorizontal">
+                    Distância horizontal (m)
+                </label>
+
+                <input
+                    type="text"
+                    id="distanciaHorizontal"
+                    placeholder="Ex.: 200,00"
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="acoes-declividade">
+
+            <button
+                type="button"
+                id="limparDeclividade"
+                class="botao-adicionar"
+            >
+                Limpar
+            </button>
+
+            <button
+                type="button"
+                id="calcularDeclividade"
+                class="botao-calcular"
+            >
+                Calcular declividade
+            </button>
+
+        </div>
+
+
+        <div class="resultado-declividade">
+
+            <div class="resultado-item">
+
+                <span>
+                    Desnível
+                </span>
+
+                <strong id="resultadoDesnivel">
+                    —
+                </strong>
+
+                <small>
+                    metros
+                </small>
+
+            </div>
+
+
+            <div class="resultado-item">
+
+                <span>
+                    Declividade
+                </span>
+
+                <strong id="resultadoDeclividade">
+                    —
+                </strong>
+
+                <small>
+                    %
+                </small>
+
+            </div>
+
+
+            <div class="resultado-item">
+
+                <span>
+                    Inclinação
+                </span>
+
+                <strong id="resultadoAngulo">
+                    —
+                </strong>
+
+                <small>
+                    graus
+                </small>
+
+            </div>
+
+
+            <div class="resultado-item">
+
+                <span>
+                    Razão
+                </span>
+
+                <strong id="resultadoRazao">
+                    —
+                </strong>
+
+                <small>
+                    1 : n
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="resultadoSentido"
+            class="resultado-sentido"
+        >
+            Informe os dados para calcular.
+        </div>
+
+
+        <p
+            id="mensagemDeclividade"
+            class="mensagem-calculadora"
+        ></p>
+
+
+        <div class="aviso-calculadora">
+
+            <strong>Atenção:</strong>
+
+            a distância informada deve corresponder à
+            distância horizontal entre os pontos.
+            O resultado é auxiliar e não substitui
+            levantamento ou análise técnica profissional.
+
+        </div>
+
+    </div>
+
+</div>
 
                 <!-- ==================================
                      CONVERSOR DE COORDENADAS
