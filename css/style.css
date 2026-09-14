@@ -1,25 +1,27 @@
-/* =====================================================
+/* =========================================================
    TOPOMUNDI TOPOGRAFIA LTDA
-===================================================== */
+   CSS PRINCIPAL
+========================================================= */
 
 :root {
-    --preto: #0b0b0c;
-    --grafite: #25282c;
-    --cinza-escuro: #5f6063;
-    --cinza: #9b9da1;
-    --cinza-claro: #eef1f4;
+    --preto: #101214;
+    --grafite: #272b30;
+    --cinza-escuro: #646b73;
+    --cinza: #9aa2aa;
+    --cinza-claro: #f3f6f8;
+    --borda: #dce4ea;
 
-    --azul: #159ee4;
-    --azul-escuro: #0879ba;
-    --azul-claro: #e9f6fd;
+    --azul: #2697dc;
+    --azul-escuro: #147dbb;
+    --azul-claro: #eaf6fd;
 
     --branco: #ffffff;
 }
 
 
-/* =====================================================
-   CONFIGURAÇÃO GERAL
-===================================================== */
+/* =========================================================
+   RESET
+========================================================= */
 
 * {
     margin: 0;
@@ -33,7 +35,7 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--branco);
+    background: var(--branco);
     color: var(--grafite);
     line-height: 1.6;
 }
@@ -43,71 +45,64 @@ img {
 }
 
 
-/* =====================================================
+/* =========================================================
    CABEÇALHO
-===================================================== */
+========================================================= */
 
 .cabecalho {
-    width: 100%;
-    background-color: var(--branco);
-    border-bottom: 1px solid #e5e7eb;
-
     position: sticky;
     top: 0;
     z-index: 1000;
+
+    width: 100%;
+
+    background: var(--branco);
+
+    border-bottom: 1px solid #e4e8ec;
 }
 
 .container-menu {
     width: 100%;
     max-width: 1400px;
 
-    margin: 0 auto;
-    padding: 14px 5%;
+    margin: auto;
+    padding: 12px 5%;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
 
-    gap: 28px;
+    gap: 30px;
 }
-
-
-/* =====================================================
-   LOGO
-===================================================== */
 
 .logo-area {
     display: flex;
     align-items: center;
-    text-decoration: none;
+
     flex-shrink: 0;
 }
 
 .logo-topomundi {
-    display: block;
-    width: 230px;
-    max-width: 100%;
+    width: 225px;
     height: auto;
+    display: block;
 }
 
 
-/* =====================================================
+/* =========================================================
    MENU
-===================================================== */
+========================================================= */
 
 .menu-principal {
+    flex: 1;
+
     display: flex;
     align-items: center;
     justify-content: center;
 
     gap: 26px;
-
-    flex: 1;
 }
 
 .menu-principal a {
-    position: relative;
-
     color: var(--grafite);
 
     text-decoration: none;
@@ -115,104 +110,46 @@ img {
     font-size: 14px;
     font-weight: 600;
 
-    white-space: nowrap;
-
-    transition: color 0.3s;
+    transition: color .25s;
 }
 
 .menu-principal a:hover {
     color: var(--azul);
 }
 
-.menu-principal a::after {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    bottom: -8px;
-
-    width: 0;
-    height: 2px;
-
-    background-color: var(--azul);
-
-    transition: width 0.3s;
-}
-
-.menu-principal a:hover::after {
-    width: 100%;
-}
-
-
-/* =====================================================
-   BOTÃO ORÇAMENTO DO MENU
-===================================================== */
-
 .botao-orcamento {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
     padding: 12px 20px;
 
-    background-color: var(--azul);
-    color: var(--branco);
-
-    text-decoration: none;
+    background: var(--azul);
+    color: white;
 
     border-radius: 6px;
+
+    text-decoration: none;
 
     font-size: 14px;
     font-weight: 700;
 
     white-space: nowrap;
-
-    transition: 0.3s;
 }
 
 .botao-orcamento:hover {
-    background-color: var(--azul-escuro);
-
-    transform: translateY(-2px);
-
-    box-shadow: 0 6px 16px rgba(21, 158, 228, 0.25);
+    background: var(--azul-escuro);
 }
-
-
-/* =====================================================
-   MENU MOBILE
-===================================================== */
 
 .menu-mobile {
     display: none;
 
-    width: auto;
-
-    padding: 5px;
-
-    margin: 0;
-
+    border: 0;
     background: transparent;
 
-    border: none;
-
-    color: var(--preto);
-
-    font-size: 30px;
-
-    cursor: pointer;
-}
-
-.menu-mobile:hover {
-    color: var(--azul);
+    font-size: 28px;
 }
 
 
-/* =====================================================
+/* =========================================================
    HERO
-===================================================== */
+========================================================= */
 
 .hero {
     position: relative;
@@ -224,446 +161,829 @@ img {
 
     padding: 90px 8%;
 
-    overflow: hidden;
-
     background:
         linear-gradient(
             90deg,
-            rgba(0, 0, 0, 0.78) 0%,
-            rgba(0, 0, 0, 0.62) 45%,
-            rgba(0, 0, 0, 0.18) 100%
+            rgba(0,0,0,.78),
+            rgba(0,0,0,.55),
+            rgba(0,0,0,.12)
         ),
         url("../imagens/topografia-hero.jpg");
 
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
 }
-
-
-.hero-overlay {
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(0, 0, 0, 0.08),
-            rgba(0, 0, 0, 0.20)
-        );
-
-    pointer-events: none;
-}
-
 
 .hero-conteudo {
     position: relative;
-
     z-index: 2;
 
     max-width: 780px;
 }
 
-
 .hero-etiqueta {
     display: inline-block;
 
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 
-    color: var(--azul);
-
-    font-size: 13px;
-    font-weight: 700;
-
-    letter-spacing: 4px;
-}
-
-
-.hero h1 {
-    color: var(--branco);
-
-    font-size: 56px;
-    font-weight: 700;
-
-    line-height: 1.08;
-
-    letter-spacing: -1.5px;
-
-    margin-bottom: 24px;
-}
-
-
-.hero p {
-    max-width: 680px;
-
-    color: #f1f5f9;
-
-    font-size: 19px;
-
-    line-height: 1.7;
-
-    margin-bottom: 32px;
-}
-
-
-/* =====================================================
-   BOTÕES DO HERO
-===================================================== */
-
-.hero-botoes {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 12px;
-
-    margin-bottom: 45px;
-}
-
-
-.botao-primario,
-.botao-secundario {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 15px 26px;
-
-    border-radius: 6px;
-
-    text-decoration: none;
-
-    font-size: 15px;
-    font-weight: 700;
-
-    transition: 0.3s;
-}
-
-
-.botao-primario {
-    background-color: var(--azul);
-
-    color: var(--branco);
-
-    border: 2px solid var(--azul);
-}
-
-
-.botao-primario:hover {
-    background-color: var(--azul-escuro);
-
-    border-color: var(--azul-escuro);
-
-    transform: translateY(-2px);
-}
-
-
-.botao-secundario {
-    background-color: transparent;
-
-    color: var(--branco);
-
-    border: 2px solid rgba(255, 255, 255, 0.80);
-}
-
-
-.botao-secundario:hover {
-    background-color: var(--branco);
-
-    color: var(--preto);
-
-    transform: translateY(-2px);
-}
-
-
-/* =====================================================
-   DIFERENCIAIS DO HERO
-===================================================== */
-
-.hero-diferenciais {
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, minmax(130px, 1fr));
-
-    gap: 18px;
-
-    max-width: 900px;
-}
-
-
-.diferencial {
-    padding: 16px 18px;
-
-    border-left: 3px solid var(--azul);
-
-    background-color:
-        rgba(255, 255, 255, 0.08);
-
-    backdrop-filter: blur(4px);
-}
-
-
-.diferencial strong {
-    display: block;
-
-    color: var(--branco);
-
-    font-size: 15px;
-
-    margin-bottom: 3px;
-}
-
-
-.diferencial span {
-    display: block;
-
-    color: #d8dee6;
-
-    font-size: 12px;
-}
-
-
-/* =====================================================
-   SEÇÕES GERAIS
-===================================================== */
-
-.container-secao {
-    width: 100%;
-    max-width: 1300px;
-
-    margin: 0 auto;
-}
-
-
-.cabecalho-secao {
-    max-width: 720px;
-
-    margin-bottom: 45px;
-}
-
-
-.etiqueta-secao {
-    display: inline-block;
-
-    color: var(--azul);
+    color: #4cb4ee;
 
     font-size: 12px;
     font-weight: 700;
 
     letter-spacing: 3px;
-
-    margin-bottom: 10px;
 }
 
+.hero h1 {
+    max-width: 760px;
+
+    margin-bottom: 24px;
+
+    color: white;
+
+    font-size: 54px;
+
+    line-height: 1.08;
+}
+
+.hero p {
+    max-width: 650px;
+
+    margin-bottom: 30px;
+
+    color: #f0f2f4;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   HERO BOTÕES
+========================================================= */
+
+.hero-botoes {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-bottom: 42px;
+}
+
+.botao-primario,
+.botao-secundario {
+    padding: 14px 24px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.botao-primario {
+    background: var(--azul);
+    color: white;
+}
+
+.botao-secundario {
+    border: 2px solid rgba(255,255,255,.8);
+
+    color: white;
+}
+
+.botao-secundario:hover {
+    background: white;
+    color: var(--preto);
+}
+
+
+/* =========================================================
+   DIFERENCIAIS
+========================================================= */
+
+.hero-diferenciais {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.diferencial {
+    padding: 14px 16px;
+
+    border-left: 3px solid var(--azul);
+
+    background: rgba(255,255,255,.08);
+}
+
+.diferencial strong {
+    display: block;
+
+    color: white;
+
+    font-size: 14px;
+}
+
+.diferencial span {
+    color: #dde2e6;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   SEÇÕES
+========================================================= */
+
+.container-secao {
+    width: 100%;
+    max-width: 1250px;
+
+    margin: auto;
+}
+
+.cabecalho-secao {
+    max-width: 680px;
+
+    margin-bottom: 40px;
+}
+
+.etiqueta-secao {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    color: var(--azul);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
 
 .cabecalho-secao h2 {
+    margin-bottom: 12px;
+
     color: var(--preto);
 
-    font-size: 40px;
-    line-height: 1.15;
+    font-size: 38px;
 
-    margin-bottom: 15px;
+    line-height: 1.2;
 }
-
 
 .cabecalho-secao p {
     color: var(--cinza-escuro);
 
-    font-size: 17px;
-
-    line-height: 1.7;
+    font-size: 16px;
 }
 
 
-/* =====================================================
+/* =========================================================
    SERVIÇOS
-===================================================== */
+========================================================= */
 
 .secao-servicos {
     padding: 90px 8%;
 
-    background-color: var(--branco);
+    background: white;
 }
-
 
 .grade-servicos {
     display: grid;
 
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 22px;
 }
 
-
 .card-servico {
-    position: relative;
+    padding: 28px;
 
-    padding: 30px;
-
-    min-height: 300px;
-
-    background-color: var(--branco);
-
-    border: 1px solid #e3e8ee;
+    border: 1px solid var(--borda);
 
     border-radius: 10px;
 
-    box-shadow:
-        0 8px 24px rgba(0, 0, 0, 0.04);
+    background: white;
 
-    transition:
-        transform 0.3s,
-        box-shadow 0.3s,
-        border-color 0.3s;
+    box-shadow: 0 7px 25px rgba(0,0,0,.04);
 }
-
 
 .card-servico:hover {
-    transform: translateY(-6px);
-
-    border-color: rgba(21, 158, 228, 0.45);
-
-    box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.08);
+    border-color: #a9d8f3;
 }
 
-
 .icone-servico {
-    width: 52px;
-    height: 52px;
+    width: 48px;
+    height: 48px;
+
+    margin-bottom: 20px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    margin-bottom: 22px;
-
-    background-color: var(--azul-claro);
+    background: var(--azul-claro);
 
     border-radius: 8px;
-
-    font-size: 26px;
 }
-
 
 .card-servico h3 {
+    margin-bottom: 10px;
+
     color: var(--preto);
 
-    font-size: 20px;
-
-    line-height: 1.3;
-
-    margin-bottom: 12px;
+    font-size: 19px;
 }
-
 
 .card-servico p {
+    margin-bottom: 18px;
+
     color: var(--cinza-escuro);
 
-    font-size: 15px;
-
-    line-height: 1.7;
-
-    margin-bottom: 22px;
+    font-size: 14px;
 }
-
 
 .card-servico a {
     color: var(--azul-escuro);
 
     text-decoration: none;
 
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
 }
 
 
-.card-servico a:hover {
-    color: var(--azul);
+/* =========================================================
+   FERRAMENTAS
+========================================================= */
+
+.secao-ferramentas {
+    padding: 90px 8%;
+
+    background: #f4f7f9;
+}
+
+.grade-ferramentas {
+    display: grid;
+
+    grid-template-columns: 270px minmax(0, 1fr);
+
+    gap: 28px;
+
+    align-items: start;
 }
 
 
-/* =====================================================
+/* =========================================================
+   MENU DAS FERRAMENTAS
+========================================================= */
+
+.lista-ferramentas {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.lista-ferramentas button {
+    width: 100%;
+
+    min-height: 68px;
+
+    margin: 0;
+    padding: 14px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    border: 1px solid var(--borda);
+
+    border-radius: 8px;
+
+    background: #fff;
+
+    color: var(--grafite);
+
+    font-family: inherit;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.ferramenta-menu:hover {
+    border-color: #9fd4f2;
+}
+
+.ferramenta-menu.ativa {
+    border-color: var(--azul);
+
+    box-shadow: 0 6px 20px rgba(20,80,120,.08);
+}
+
+.ferramenta-bloqueada {
+    opacity: .6;
+    cursor: default !important;
+}
+
+.icone-ferramenta {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--azul-claro);
+
+    color: var(--azul-escuro);
+
+    border-radius: 7px;
+
+    font-size: 20px;
+}
+
+.lista-ferramentas strong {
+    display: block;
+
+    font-size: 13px;
+}
+
+.lista-ferramentas small {
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--cinza-escuro);
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   ÁREA DOS PAINÉIS
+========================================================= */
+
+.area-paineis-ferramentas {
+    width: 100%;
+    min-width: 0;
+}
+
+.painel-ferramenta {
+    display: none;
+}
+
+.painel-ferramenta.ativo {
+    display: block;
+}
+
+
+/* =========================================================
+   CARD DAS FERRAMENTAS
+========================================================= */
+
+.calculadora-area {
+    width: 100%;
+
+    padding: 34px;
+
+    background: white;
+
+    border: 1px solid var(--borda);
+
+    border-radius: 12px;
+
+    box-shadow: 0 10px 30px rgba(20,40,60,.05);
+}
+
+.calculadora-topo {
+    margin-bottom: 25px;
+    padding-bottom: 22px;
+
+    border-bottom: 1px solid #e7ebee;
+}
+
+.calculadora-etiqueta {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--azul);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.calculadora-topo h3 {
+    margin-bottom: 5px;
+
+    color: var(--preto);
+
+    font-size: 25px;
+}
+
+.calculadora-topo p {
+    color: var(--cinza-escuro);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   CALCULADORA DE ÁREA
+========================================================= */
+
+.cabecalho-coordenadas,
+.linha-coordenada {
+    display: grid;
+
+    grid-template-columns:
+        60px
+        minmax(160px, 1fr)
+        minmax(160px, 1fr)
+        40px;
+
+    gap: 10px;
+
+    align-items: center;
+}
+
+.cabecalho-coordenadas {
+    padding: 0 3px 7px;
+
+    color: var(--cinza-escuro);
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.linha-coordenada {
+    margin-bottom: 9px;
+}
+
+.numero-ponto {
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--azul-claro);
+
+    color: var(--azul-escuro);
+
+    border-radius: 6px;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.linha-coordenada input {
+    width: 100%;
+    height: 44px;
+
+    padding: 0 12px;
+
+    border: 1px solid #c9d4dc;
+
+    border-radius: 6px;
+
+    font-family: inherit;
+}
+
+.linha-coordenada input:focus {
+    outline: none;
+
+    border-color: var(--azul);
+}
+
+.botao-remover {
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid #dce3e8;
+
+    border-radius: 6px;
+
+    background: white;
+
+    color: #999;
+
+    font-size: 19px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.acoes-calculadora {
+    margin: 20px 0 28px;
+
+    display: flex;
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+.botao-adicionar,
+.botao-calcular,
+.botao-converter {
+    min-height: 43px;
+
+    padding: 0 18px;
+
+    border-radius: 6px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.botao-adicionar {
+    border: 1px solid #bcc8d0;
+
+    background: white;
+
+    color: var(--grafite);
+}
+
+.botao-calcular,
+.botao-converter {
+    border: 1px solid var(--azul);
+
+    background: var(--azul);
+
+    color: white;
+}
+
+.botao-calcular:hover,
+.botao-converter:hover {
+    background: var(--azul-escuro);
+}
+
+
+/* =========================================================
+   RESULTADOS
+========================================================= */
+
+.resultado-area,
+.resultado-conversor {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+
+    padding-top: 24px;
+
+    border-top: 1px solid #e4e9ed;
+}
+
+.resultado-item {
+    padding: 18px;
+
+    background: #f6f9fb;
+
+    border: 1px solid #e1e8ed;
+
+    border-radius: 8px;
+
+    text-align: center;
+}
+
+.resultado-item span {
+    display: block;
+
+    color: var(--cinza-escuro);
+
+    font-size: 11px;
+}
+
+.resultado-item strong {
+    display: block;
+
+    margin: 4px 0;
+
+    color: var(--preto);
+
+    font-size: 21px;
+
+    word-break: break-word;
+}
+
+.resultado-item small {
+    color: var(--cinza-escuro);
+
+    font-size: 10px;
+}
+
+.mensagem-calculadora {
+    min-height: 22px;
+
+    margin-top: 10px;
+
+    color: var(--azul-escuro);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.aviso-calculadora {
+    margin-top: 17px;
+
+    padding: 13px 15px;
+
+    border-left: 3px solid var(--azul);
+
+    background: #f5f7f9;
+
+    color: var(--cinza-escuro);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   CONVERSOR
+========================================================= */
+
+.tipo-conversao {
+    margin-bottom: 24px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+.botao-tipo-conversao {
+    min-height: 43px;
+
+    padding: 8px 15px;
+
+    border: 1px solid #d4dde3;
+
+    border-radius: 7px;
+
+    background: #f4f7f9;
+
+    color: var(--grafite);
+
+    font-family: inherit;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.botao-tipo-conversao.ativo {
+    border-color: var(--azul);
+
+    background: var(--azul);
+
+    color: white;
+}
+
+.form-conversao {
+    display: none;
+}
+
+.form-conversao.ativo {
+    display: block;
+}
+
+.grade-configuracao {
+    max-width: 320px;
+
+    margin-bottom: 18px;
+}
+
+.grade-campos-conversor {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+
+    margin-bottom: 20px;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.campo-formulario label {
+    color: var(--grafite);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.campo-formulario input,
+.campo-formulario select {
+    width: 100%;
+    height: 44px;
+
+    padding: 0 12px;
+
+    border: 1px solid #c9d4dc;
+
+    border-radius: 6px;
+
+    background: white;
+
+    color: var(--grafite);
+
+    font-family: inherit;
+
+    font-size: 13px;
+}
+
+.campo-formulario input:focus,
+.campo-formulario select:focus {
+    outline: none;
+
+    border-color: var(--azul);
+}
+
+.botao-converter {
+    margin-bottom: 27px;
+}
+
+
+/* =========================================================
    RODAPÉ
-===================================================== */
+========================================================= */
 
 footer {
-    background-color: var(--preto);
-
-    color: var(--branco);
-
     padding: 40px 8%;
 
-    border-top: 4px solid var(--azul);
-}
+    background: var(--preto);
 
+    border-top: 4px solid var(--azul);
+
+    color: white;
+}
 
 footer p {
-    margin: 5px 0;
+    margin: 4px 0;
 
-    color: #d7dade;
+    color: #d9dee2;
 
-    font-size: 14px;
+    font-size: 13px;
 }
-
 
 footer p:first-child {
-    color: var(--branco);
+    color: white;
 
-    font-weight: bold;
-
-    letter-spacing: 1px;
+    font-weight: 700;
 }
 
 
-/* =====================================================
-   TABLET
-===================================================== */
+/* =========================================================
+   RESPONSIVO
+========================================================= */
 
 @media (max-width: 1050px) {
 
     .container-menu {
-        padding: 12px 5%;
-
         flex-wrap: wrap;
-    }
-
-    .logo-topomundi {
-        width: 190px;
     }
 
     .menu-mobile {
         display: block;
-
-        order: 2;
-    }
-
-    .botao-orcamento {
         margin-left: auto;
-
-        order: 1;
     }
 
     .menu-principal {
         display: none;
 
-        order: 3;
-
         width: 100%;
 
         flex-direction: column;
-
         align-items: flex-start;
 
         gap: 0;
-
-        padding-top: 15px;
-
-        border-top: 1px solid #e5e7eb;
     }
 
     .menu-principal.ativo {
@@ -673,665 +993,93 @@ footer p:first-child {
     .menu-principal a {
         width: 100%;
 
-        padding: 14px 0;
+        padding: 12px 0;
 
-        border-bottom: 1px solid #eeeeee;
-    }
-
-    .menu-principal a::after {
-        display: none;
-    }
-
-    .hero-diferenciais {
-        grid-template-columns:
-            repeat(2, minmax(140px, 1fr));
-    }
-
-    .grade-servicos {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-}
-
-
-/* =====================================================
-   CELULAR
-===================================================== */
-
-@media (max-width: 768px) {
-
-    .hero {
-        min-height: 620px;
-
-        padding: 70px 6%;
-
-        background-position: 65% center;
-    }
-
-    .hero h1 {
-        font-size: 40px;
-    }
-
-    .hero p {
-        font-size: 17px;
+        border-bottom: 1px solid #eee;
     }
 
     .hero-diferenciais {
         grid-template-columns: 1fr 1fr;
     }
 
-    .secao-servicos {
+    .grade-servicos {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .grade-ferramentas {
+        grid-template-columns: 1fr;
+    }
+
+    .lista-ferramentas {
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .hero {
+        min-height: 600px;
+
         padding: 70px 6%;
     }
 
-    .cabecalho-secao h2 {
-        font-size: 34px;
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .secao-servicos,
+    .secao-ferramentas {
+        padding: 70px 6%;
     }
 
     .grade-servicos {
         grid-template-columns: 1fr;
     }
 
-    footer {
-        padding: 35px 6%;
-    }
-}
-
-
-/* =====================================================
-   CELULARES PEQUENOS
-===================================================== */
-
-@media (max-width: 600px) {
-
-    .logo-topomundi {
-        width: 160px;
-    }
-
-    .botao-orcamento {
-        display: none;
-    }
-
-    .menu-mobile {
-        margin-left: auto;
-    }
-
-    .hero h1 {
-        font-size: 34px;
-    }
-
-    .hero-etiqueta {
-        font-size: 11px;
-
-        letter-spacing: 3px;
-    }
-
-    .hero-botoes {
-        flex-direction: column;
-    }
-
-    .botao-primario,
-    .botao-secundario {
-        width: 100%;
-    }
-
-    .hero-diferenciais {
-        grid-template-columns: 1fr;
-    }
-
-    .card-servico {
-        min-height: auto;
-    }
-}
-/* =====================================================
-   FERRAMENTAS ONLINE
-===================================================== */
-
-.secao-ferramentas {
-    padding: 90px 8%;
-    background: #f4f7fa;
-}
-
-.secao-ferramentas .container-secao {
-    max-width: 1300px;
-    margin: 0 auto;
-}
-
-
-/* =====================================================
-   ESTRUTURA DA ÁREA
-===================================================== */
-
-.grade-ferramentas {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-
-    gap: 32px;
-
-    align-items: start;
-}
-
-
-/* =====================================================
-   MENU LATERAL
-===================================================== */
-
-.lista-ferramentas {
-    display: flex;
-    flex-direction: column;
-
-    gap: 12px;
-}
-
-
-.lista-ferramentas button {
-    width: 100%;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 14px;
-
-    padding: 18px;
-
-    margin: 0;
-
-    text-align: left;
-
-    border-radius: 10px;
-
-    border: 1px solid #dce4ea;
-
-    font-family: inherit;
-
-    box-shadow: none;
-}
-
-
-.ferramenta-selecionada {
-    background: #ffffff;
-
-    color: var(--grafite);
-
-    border-color: var(--azul) !important;
-
-    box-shadow:
-        0 8px 24px rgba(0, 0, 0, 0.05) !important;
-}
-
-
-.ferramenta-bloqueada {
-    background: #edf1f4;
-
-    color: #7f8992;
-
-    cursor: default;
-}
-
-
-.ferramenta-bloqueada:hover {
-    background: #edf1f4;
-
-    color: #7f8992;
-
-    transform: none;
-
-    box-shadow: none;
-}
-
-
-.icone-ferramenta {
-    width: 45px;
-    height: 45px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    background: var(--azul-claro);
-
-    color: var(--azul-escuro);
-
-    border-radius: 8px;
-
-    font-size: 22px;
-
-    font-weight: 700;
-}
-
-
-.lista-ferramentas strong {
-    display: block;
-
-    font-size: 15px;
-
-    margin-bottom: 3px;
-}
-
-
-.lista-ferramentas small {
-    display: block;
-
-    font-size: 12px;
-
-    font-weight: normal;
-}
-
-
-/* =====================================================
-   PAINEL DA CALCULADORA
-===================================================== */
-
-.calculadora-area {
-    background: #ffffff;
-
-    border-radius: 14px;
-
-    border: 1px solid #dde5eb;
-
-    padding: 36px;
-
-    box-shadow:
-        0 10px 35px rgba(15, 35, 55, 0.06);
-}
-
-
-.calculadora-topo {
-    padding-bottom: 24px;
-
-    margin-bottom: 24px;
-
-    border-bottom: 1px solid #e7edf1;
-}
-
-
-.calculadora-etiqueta {
-    display: block;
-
-    color: var(--azul);
-
-    font-size: 11px;
-
-    font-weight: 700;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 7px;
-}
-
-
-.calculadora-topo h3 {
-    margin: 0 0 6px;
-
-    color: var(--preto);
-
-    font-size: 28px;
-}
-
-
-.calculadora-topo p {
-    color: var(--cinza-escuro);
-
-    font-size: 14px;
-}
-
-
-/* =====================================================
-   TABELA DE COORDENADAS
-===================================================== */
-
-.cabecalho-coordenadas,
-.linha-coordenada {
-    display: grid;
-
-    grid-template-columns:
-        70px minmax(140px, 1fr)
-        minmax(140px, 1fr) 42px;
-
-    gap: 10px;
-
-    align-items: center;
-}
-
-
-.cabecalho-coordenadas {
-    padding: 0 3px 9px;
-
-    color: var(--cinza-escuro);
-
-    font-size: 12px;
-
-    font-weight: 700;
-}
-
-
-.linha-coordenada {
-    margin-bottom: 10px;
-}
-
-
-.numero-ponto {
-    min-height: 46px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background: var(--azul-claro);
-
-    color: var(--azul-escuro);
-
-    border-radius: 7px;
-
-    font-size: 14px;
-
-    font-weight: 700;
-}
-
-
-.linha-coordenada input {
-    width: 100%;
-    height: 46px;
-
-    padding: 0 13px;
-
-    border: 1px solid #cbd5dc;
-
-    border-radius: 7px;
-
-    background: #ffffff;
-
-    color: var(--grafite);
-
-    font-family: inherit;
-
-    font-size: 14px;
-
-    outline: none;
-}
-
-
-.linha-coordenada input:focus {
-    border-color: var(--azul);
-
-    box-shadow:
-        0 0 0 3px rgba(21, 158, 228, 0.10);
-}
-
-
-.botao-remover {
-    width: 40px;
-    height: 40px;
-
-    padding: 0;
-    margin: 0;
-
-    border: 1px solid #dfe5e9;
-
-    border-radius: 7px;
-
-    background: #ffffff;
-
-    color: #929aa1;
-
-    font-size: 21px;
-
-    box-shadow: none;
-}
-
-
-.botao-remover:hover {
-    background: #fff1f1;
-
-    color: #b72c2c;
-
-    border-color: #e6aaaa;
-
-    transform: none;
-
-    box-shadow: none;
-}
-
-
-/* =====================================================
-   AÇÕES
-===================================================== */
-
-.acoes-calculadora {
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 12px;
-
-    margin-top: 22px;
-
-    margin-bottom: 30px;
-}
-
-
-.botao-adicionar,
-.botao-calcular {
-    min-width: 170px;
-
-    padding: 13px 20px;
-
-    margin: 0;
-
-    border-radius: 7px;
-
-    font-family: inherit;
-
-    font-size: 14px;
-
-    font-weight: 700;
-}
-
-
-.botao-adicionar {
-    background: #ffffff;
-
-    color: var(--grafite);
-
-    border: 1px solid #bfcbd3;
-}
-
-
-.botao-adicionar:hover {
-    background: #f3f6f8;
-
-    border-color: #9aa8b2;
-
-    color: var(--preto);
-
-    transform: none;
-
-    box-shadow: none;
-}
-
-
-.botao-calcular {
-    background: var(--azul);
-
-    color: #ffffff;
-
-    border: 1px solid var(--azul);
-}
-
-
-.botao-calcular:hover {
-    background: var(--azul-escuro);
-
-    border-color: var(--azul-escuro);
-}
-
-
-/* =====================================================
-   RESULTADOS
-===================================================== */
-
-.resultado-area {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 14px;
-
-    padding-top: 26px;
-
-    border-top: 1px solid #e6ebef;
-}
-
-
-.resultado-item {
-    padding: 21px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #f8fbfd,
-            #f1f6f9
-        );
-
-    border: 1px solid #e2e9ee;
-
-    border-radius: 10px;
-
-    text-align: center;
-}
-
-
-.resultado-item span {
-    display: block;
-
-    color: var(--cinza-escuro);
-
-    font-size: 12px;
-}
-
-
-.resultado-item strong {
-    display: block;
-
-    margin: 5px 0 2px;
-
-    color: var(--preto);
-
-    font-size: 25px;
-
-    line-height: 1.2;
-}
-
-
-.resultado-item small {
-    color: var(--cinza-escuro);
-
-    font-size: 11px;
-}
-
-
-/* =====================================================
-   MENSAGEM E AVISO
-===================================================== */
-
-.mensagem-calculadora {
-    min-height: 24px;
-
-    margin-top: 12px;
-
-    color: var(--azul-escuro);
-
-    font-size: 13px;
-
-    font-weight: 600;
-}
-
-
-.aviso-calculadora {
-    margin-top: 18px;
-
-    padding: 15px 17px;
-
-    background: #f6f8fa;
-
-    border-left: 4px solid var(--azul);
-
-    border-radius: 4px;
-
-    color: var(--cinza-escuro);
-
-    font-size: 12px;
-
-    line-height: 1.6;
-}
-
-
-/* =====================================================
-   RESPONSIVIDADE
-===================================================== */
-
-@media (max-width: 950px) {
-
-    .grade-ferramentas {
-        grid-template-columns: 1fr;
-    }
-
-
-    .lista-ferramentas {
-        display: grid;
-
-        grid-template-columns:
-            repeat(3, 1fr);
-    }
-}
-
-
-@media (max-width: 760px) {
-
-    .secao-ferramentas {
-        padding: 70px 6%;
-    }
-
-
     .lista-ferramentas {
         grid-template-columns: 1fr;
     }
-
 
     .calculadora-area {
-        padding: 24px;
+        padding: 22px;
     }
-
 
     .cabecalho-coordenadas {
         display: none;
     }
 
-
     .linha-coordenada {
         grid-template-columns:
-            45px 1fr 1fr 40px;
+            45px 1fr 1fr 38px;
     }
 
-
-    .resultado-area {
+    .tipo-conversao {
         grid-template-columns: 1fr;
     }
 
+    .grade-campos-conversor {
+        grid-template-columns: 1fr;
+    }
+
+    .resultado-area,
+    .resultado-conversor {
+        grid-template-columns: 1fr;
+    }
 
     .acoes-calculadora {
         flex-direction: column;
     }
 
-
     .botao-adicionar,
-    .botao-calcular {
+    .botao-calcular,
+    .botao-converter {
         width: 100%;
     }
 }
@@ -1339,1031 +1087,19 @@ footer p:first-child {
 
 @media (max-width: 560px) {
 
-    .linha-coordenada {
-        grid-template-columns:
-            45px 1fr 40px;
-
-        grid-template-areas:
-            "ponto este remover"
-            ". norte .";
+    .logo-topomundi {
+        width: 165px;
     }
 
-
-    .numero-ponto {
-        grid-area: ponto;
-    }
-
-
-    .coordenada-e {
-        grid-area: este;
-    }
-
-
-    .coordenada-n {
-        grid-area: norte;
-    }
-
-
-    .botao-remover {
-        grid-area: remover;
-    }
-}
-
-/* =====================================================
-   MENU DAS FERRAMENTAS
-===================================================== */
-
-.lista-ferramentas {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 12px;
-}
-
-
-.lista-ferramentas button {
-    width: 100%;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 15px;
-
-    text-align: left;
-
-    padding: 18px;
-
-    margin: 0;
-
-    border-radius: 8px;
-
-    border: 1px solid #dfe6ec;
-
-    box-shadow: none;
-}
-
-
-.ferramenta-selecionada {
-    background-color: var(--branco);
-
-    border-color: var(--azul) !important;
-
-    color: var(--grafite);
-}
-
-
-.ferramenta-bloqueada {
-    background-color: #eef2f5;
-
-    color: #87919b;
-
-    cursor: default;
-}
-
-
-.ferramenta-bloqueada:hover {
-    background-color: #eef2f5;
-
-    color: #87919b;
-
-    transform: none;
-
-    box-shadow: none;
-}
-
-
-.icone-ferramenta {
-    width: 42px;
-    height: 42px;
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background-color: var(--azul-claro);
-
-    color: var(--azul-escuro);
-
-    border-radius: 7px;
-
-    font-size: 24px;
-
-    font-weight: bold;
-}
-
-
-.lista-ferramentas strong {
-    display: block;
-
-    font-size: 15px;
-
-    margin-bottom: 3px;
-}
-
-
-.lista-ferramentas small {
-    display: block;
-
-    font-size: 12px;
-
-    font-weight: normal;
-}
-
-
-/* =====================================================
-   CALCULADORA
-===================================================== */
-
-.calculadora-area {
-    background-color: var(--branco);
-
-    border: 1px solid #e0e6eb;
-
-    border-radius: 12px;
-
-    padding: 35px;
-
-    box-shadow:
-        0 12px 35px rgba(0, 0, 0, 0.05);
-}
-
-
-.calculadora-topo {
-    margin-bottom: 30px;
-}
-
-
-.calculadora-etiqueta {
-    display: block;
-
-    color: var(--azul);
-
-    font-size: 11px;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 7px;
-}
-
-
-.calculadora-topo h3 {
-    color: var(--preto);
-
-    font-size: 27px;
-
-    margin-bottom: 5px;
-}
-
-
-.calculadora-topo p {
-    color: var(--cinza-escuro);
-
-    font-size: 14px;
-}
-
-
-/* =====================================================
-   COORDENADAS
-===================================================== */
-
-.cabecalho-coordenadas,
-.linha-coordenada {
-    display: grid;
-
-    grid-template-columns:
-        70px 1fr 1fr 45px;
-
-    gap: 12px;
-
-    align-items: center;
-}
-
-
-.cabecalho-coordenadas {
-    padding: 0 5px 8px;
-
-    color: var(--cinza-escuro);
-
-    font-size: 12px;
-
-    font-weight: bold;
-}
-
-
-.linha-coordenada {
-    margin-bottom: 10px;
-}
-
-
-.numero-ponto {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    height: 45px;
-
-    background-color: var(--azul-claro);
-
-    color: var(--azul-escuro);
-
-    border-radius: 6px;
-
-    font-weight: bold;
-}
-
-
-.linha-coordenada input {
-    width: 100%;
-
-    height: 45px;
-
-    padding: 0 12px;
-
-    border: 1px solid #ccd5dc;
-
-    border-radius: 6px;
-
-    font-size: 14px;
-
-    outline: none;
-
-    transition: border-color 0.2s;
-}
-
-
-.linha-coordenada input:focus {
-    border-color: var(--azul);
-}
-
-
-/* Remove setas em alguns navegadores */
-
-.linha-coordenada input::-webkit-inner-spin-button,
-.linha-coordenada input::-webkit-outer-spin-button {
-    margin: 0;
-}
-
-
-.botao-remover {
-    width: 40px;
-    height: 40px;
-
-    padding: 0;
-    margin: 0;
-
-    background-color: transparent;
-
-    border: 1px solid #e2e5e8;
-
-    color: #a2a8ad;
-
-    font-size: 22px;
-
-    box-shadow: none;
-}
-
-
-.botao-remover:hover {
-    background-color: #fff0f0;
-
-    border-color: #dd9090;
-
-    color: #b42929;
-
-    transform: none;
-
-    box-shadow: none;
-}
-
-
-/* =====================================================
-   AÇÕES DA CALCULADORA
-===================================================== */
-
-.acoes-calculadora {
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 12px;
-
-    margin-top: 20px;
-
-    margin-bottom: 30px;
-}
-
-
-.botao-adicionar,
-.botao-calcular {
-    margin: 0;
-
-    padding: 13px 20px;
-
-    border-radius: 6px;
-}
-
-
-.botao-adicionar {
-    background-color: var(--branco);
-
-    color: var(--grafite);
-
-    border: 1px solid #ccd5dc;
-}
-
-
-.botao-adicionar:hover {
-    background-color: #f5f7f9;
-
-    color: var(--preto);
-
-    border-color: var(--cinza);
-
-    transform: none;
-
-    box-shadow: none;
-}
-
-
-.botao-calcular {
-    background-color: var(--azul);
-
-    color: var(--branco);
-
-    border-color: var(--azul);
-}
-
-
-/* =====================================================
-   RESULTADOS
-===================================================== */
-
-.resultado-area {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 12px;
-
-    padding-top: 25px;
-
-    border-top: 1px solid #e4e9ed;
-}
-
-
-.resultado-item {
-    background-color: #f5f9fc;
-
-    border-radius: 8px;
-
-    padding: 20px;
-
-    text-align: center;
-}
-
-
-.resultado-item span {
-    display: block;
-
-    color: var(--cinza-escuro);
-
-    font-size: 12px;
-
-    margin-bottom: 5px;
-}
-
-
-.resultado-item strong {
-    display: block;
-
-    color: var(--preto);
-
-    font-size: 24px;
-
-    line-height: 1.2;
-}
-
-
-.resultado-item small {
-    display: block;
-
-    color: var(--cinza-escuro);
-
-    margin-top: 4px;
-
-    font-size: 11px;
-}
-
-
-.mensagem-calculadora {
-    min-height: 24px;
-
-    margin-top: 12px;
-
-    color: var(--azul-escuro);
-
-    font-size: 13px;
-
-    font-weight: 600;
-}
-
-
-.aviso-calculadora {
-    margin-top: 20px;
-
-    padding: 14px 16px;
-
-    background-color: #f5f7f9;
-
-    border-left: 3px solid var(--azul);
-
-    color: var(--cinza-escuro);
-
-    font-size: 12px;
-
-    line-height: 1.6;
-}
-
-
-/* =====================================================
-   RESPONSIVIDADE DAS FERRAMENTAS
-===================================================== */
-
-@media (max-width: 900px) {
-
-    .grade-ferramentas {
-        grid-template-columns: 1fr;
-    }
-
-
-    .lista-ferramentas {
-        display: grid;
-
-        grid-template-columns:
-            repeat(3, 1fr);
-    }
-}
-
-
-@media (max-width: 700px) {
-
-    .secao-ferramentas {
-        padding: 70px 6%;
-    }
-
-
-    .lista-ferramentas {
-        grid-template-columns: 1fr;
-    }
-
-
-    .calculadora-area {
-        padding: 22px;
-    }
-
-
-    .cabecalho-coordenadas {
+    .botao-orcamento {
         display: none;
     }
 
-
-    .linha-coordenada {
-        grid-template-columns:
-            45px 1fr 1fr 38px;
-
-        gap: 7px;
+    .hero h1 {
+        font-size: 32px;
     }
 
-
-    .resultado-area {
+    .hero-diferenciais {
         grid-template-columns: 1fr;
-    }
-
-
-    .acoes-calculadora {
-        flex-direction: column;
-    }
-
-
-    .botao-adicionar,
-    .botao-calcular {
-        width: 100%;
-    }
-}
-
-
-@media (max-width: 520px) {
-
-    .linha-coordenada {
-        grid-template-columns:
-            40px 1fr 38px;
-    }
-
-
-    .coordenada-n {
-        grid-column:
-            2 / 3;
-    }
-
-
-    .linha-coordenada
-    .botao-remover {
-        grid-column: 3;
-        grid-row: 1;
-    }
-}
-/* =====================================================
-   PAINÉIS DAS FERRAMENTAS
-===================================================== */
-
-.painel-ferramenta {
-    display: none;
-}
-
-.painel-ferramenta.ativo {
-    display: block;
-}
-
-
-/* MENU ATIVO */
-
-.ferramenta-menu {
-    background: #ffffff;
-    color: var(--grafite);
-}
-
-.ferramenta-menu.ativa {
-    border-color: var(--azul) !important;
-
-    box-shadow:
-        0 8px 24px
-        rgba(0, 0, 0, 0.06) !important;
-}
-
-
-/* =====================================================
-   TIPO DE CONVERSÃO
-===================================================== */
-
-.tipo-conversao {
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 10px;
-
-    margin-bottom: 25px;
-}
-
-
-.botao-tipo-conversao {
-    margin: 0;
-
-    padding: 13px 16px;
-
-    background: #f3f6f8;
-
-    color: var(--grafite);
-
-    border:
-        1px solid #d6dee4;
-
-    border-radius: 7px;
-
-    box-shadow: none;
-}
-
-
-.botao-tipo-conversao:hover {
-    background: #eaf4fb;
-
-    color: var(--azul-escuro);
-
-    transform: none;
-
-    box-shadow: none;
-}
-
-
-.botao-tipo-conversao.ativo {
-    background: var(--azul);
-
-    border-color: var(--azul);
-
-    color: #ffffff;
-}
-
-
-/* =====================================================
-   FORMULÁRIOS
-===================================================== */
-
-.form-conversao {
-    display: none;
-}
-
-.form-conversao.ativo {
-    display: block;
-}
-
-
-.grade-configuracao {
-    display: grid;
-
-    grid-template-columns:
-        minmax(200px, 320px);
-
-    margin-bottom: 20px;
-}
-
-
-.grade-campos-conversor {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 18px;
-
-    margin-bottom: 22px;
-}
-
-
-.campo-formulario {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 7px;
-}
-
-
-.campo-formulario label {
-    color: var(--grafite);
-
-    font-size: 13px;
-
-    font-weight: 700;
-}
-
-
-.campo-formulario input,
-.campo-formulario select {
-    width: 100%;
-
-    height: 46px;
-
-    padding: 0 13px;
-
-    background: #ffffff;
-
-    border:
-        1px solid #cbd5dc;
-
-    border-radius: 7px;
-
-    color: var(--grafite);
-
-    font-family: inherit;
-
-    font-size: 14px;
-
-    outline: none;
-}
-
-
-.campo-formulario input:focus,
-.campo-formulario select:focus {
-    border-color: var(--azul);
-
-    box-shadow:
-        0 0 0 3px
-        rgba(21, 158, 228, 0.10);
-}
-
-
-.botao-converter {
-    margin: 0 0 28px;
-
-    min-width: 220px;
-}
-
-
-/* =====================================================
-   RESULTADO DO CONVERSOR
-===================================================== */
-
-.resultado-conversor {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 14px;
-
-    padding-top: 26px;
-
-    border-top:
-        1px solid #e6ebef;
-}
-
-
-.resultado-conversor
-.resultado-item strong {
-    font-size: 20px;
-
-    word-break: break-word;
-}
-
-
-/* =====================================================
-   RESPONSIVIDADE
-===================================================== */
-
-@media (max-width: 760px) {
-
-    .tipo-conversao {
-        grid-template-columns: 1fr;
-    }
-
-
-    .grade-campos-conversor {
-        grid-template-columns: 1fr;
-    }
-
-
-    .resultado-conversor {
-        grid-template-columns: 1fr;
-    }
-
-
-    .botao-converter {
-        width: 100%;
-    }
-}
-/* =====================================================
-   CORREÇÃO FINAL - PAINÉIS DAS FERRAMENTAS
-===================================================== */
-
-.area-paineis-ferramentas {
-    width: 100%;
-    min-width: 0;
-}
-
-
-/* Por padrão nenhum painel aparece */
-
-.painel-ferramenta {
-    display: none !important;
-    width: 100%;
-}
-
-
-/* Somente o painel ativo aparece */
-
-.painel-ferramenta.ativo {
-    display: block !important;
-}
-
-
-/* =====================================================
-   BOTÕES DO MENU DE FERRAMENTAS
-===================================================== */
-
-.ferramenta-menu {
-    background-color: #ffffff;
-    color: var(--grafite);
-
-    cursor: pointer;
-}
-
-
-.ferramenta-menu.ativa {
-    border-color: var(--azul) !important;
-
-    background-color: #ffffff;
-
-    box-shadow:
-        0 8px 24px
-        rgba(0, 0, 0, 0.06) !important;
-}
-
-
-/* =====================================================
-   BOTÕES DE CONVERSÃO
-===================================================== */
-
-.tipo-conversao {
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 12px;
-
-    margin-bottom: 28px;
-}
-
-
-.botao-tipo-conversao {
-    width: 100%;
-
-    margin: 0;
-
-    padding: 14px 16px;
-
-    border-radius: 8px;
-
-    border: 1px solid #d5dde3;
-
-    background-color: #f4f7f9;
-
-    color: var(--grafite);
-
-    box-shadow: none;
-}
-
-
-.botao-tipo-conversao:hover {
-    background-color: #eaf5fc;
-
-    color: var(--azul-escuro);
-
-    transform: none;
-
-    box-shadow: none;
-}
-
-
-.botao-tipo-conversao.ativo {
-    background-color: var(--azul);
-
-    border-color: var(--azul);
-
-    color: #ffffff;
-}
-
-
-/* =====================================================
-   FORMULÁRIOS DO CONVERSOR
-===================================================== */
-
-.form-conversao {
-    display: none;
-}
-
-
-.form-conversao.ativo {
-    display: block;
-}
-
-
-.grade-configuracao {
-    display: grid;
-
-    grid-template-columns:
-        minmax(200px, 320px);
-
-    gap: 15px;
-
-    margin-bottom: 22px;
-}
-
-
-.grade-campos-conversor {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-    gap: 18px;
-
-    margin-bottom: 22px;
-}
-
-
-.campo-formulario {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 7px;
-}
-
-
-.campo-formulario label {
-    color: var(--grafite);
-
-    font-size: 13px;
-
-    font-weight: 700;
-}
-
-
-.campo-formulario input,
-.campo-formulario select {
-    width: 100%;
-
-    height: 46px;
-
-    padding: 0 13px;
-
-    background: #ffffff;
-
-    border: 1px solid #cbd5dc;
-
-    border-radius: 7px;
-
-    color: var(--grafite);
-
-    font-family: inherit;
-
-    font-size: 14px;
-
-    outline: none;
-}
-
-
-.campo-formulario input:focus,
-.campo-formulario select:focus {
-    border-color: var(--azul);
-
-    box-shadow:
-        0 0 0 3px
-        rgba(21, 158, 228, 0.10);
-}
-
-
-.botao-converter {
-    min-width: 230px;
-
-    margin: 0 0 30px;
-}
-
-
-/* =====================================================
-   RESULTADOS DO CONVERSOR
-===================================================== */
-
-.resultado-conversor {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    gap: 14px;
-
-    padding-top: 26px;
-
-    border-top:
-        1px solid #e6ebef;
-}
-
-
-.resultado-conversor
-.resultado-item strong {
-    font-size: 20px;
-
-    word-break: break-word;
-}
-
-
-/* =====================================================
-   RESPONSIVO
-===================================================== */
-
-@media (max-width: 760px) {
-
-    .tipo-conversao {
-        grid-template-columns: 1fr;
-    }
-
-
-    .grade-campos-conversor {
-        grid-template-columns: 1fr;
-    }
-
-
-    .resultado-conversor {
-        grid-template-columns: 1fr;
-    }
-
-
-    .botao-converter {
-        width: 100%;
-
-        min-width: 0;
     }
 }
