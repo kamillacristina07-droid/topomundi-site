@@ -62,7 +62,10 @@
 
 <main>
 
-    <!-- HERO -->
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
     <section id="inicio" class="hero">
 
         <div class="hero-overlay"></div>
@@ -125,7 +128,10 @@
     </section>
 
 
-    <!-- SERVIÇOS -->
+    <!-- =====================================================
+         SERVIÇOS
+    ====================================================== -->
+
     <section id="servicos" class="secao-servicos">
 
         <div class="container-secao">
@@ -287,6 +293,302 @@
                     </a>
 
                 </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FERRAMENTAS ONLINE
+    ====================================================== -->
+
+    <section id="ferramentas" class="secao-ferramentas">
+
+        <div class="container-secao">
+
+            <div class="cabecalho-secao">
+
+                <span class="etiqueta-secao">
+                    FERRAMENTAS ONLINE
+                </span>
+
+                <h2>
+                    Utilitários para Topografia
+                </h2>
+
+                <p>
+                    Ferramentas gratuitas desenvolvidas para auxiliar
+                    profissionais, estudantes e clientes em cálculos
+                    topográficos do dia a dia.
+                </p>
+
+            </div>
+
+
+            <div class="grade-ferramentas">
+
+                <div class="lista-ferramentas">
+
+                    <button
+                        class="ferramenta-selecionada"
+                        type="button"
+                    >
+                        <span class="icone-ferramenta">▱</span>
+
+                        <span>
+                            <strong>Calculadora de Área</strong>
+                            <small>
+                                Área e perímetro por coordenadas
+                            </small>
+                        </span>
+                    </button>
+
+
+                    <button
+                        class="ferramenta-bloqueada"
+                        type="button"
+                    >
+                        <span class="icone-ferramenta">⇄</span>
+
+                        <span>
+                            <strong>Conversor de Coordenadas</strong>
+                            <small>
+                                Em breve
+                            </small>
+                        </span>
+                    </button>
+
+
+                    <button
+                        class="ferramenta-bloqueada"
+                        type="button"
+                    >
+                        <span class="icone-ferramenta">∠</span>
+
+                        <span>
+                            <strong>Calculadora de Declividade</strong>
+                            <small>
+                                Em breve
+                            </small>
+                        </span>
+                    </button>
+
+                </div>
+
+
+                <!-- CALCULADORA -->
+
+                <div class="calculadora-area">
+
+                    <div class="calculadora-topo">
+
+                        <div>
+                            <span class="calculadora-etiqueta">
+                                FERRAMENTA GRATUITA
+                            </span>
+
+                            <h3>
+                                Calculadora de Área
+                            </h3>
+
+                            <p>
+                                Informe as coordenadas dos vértices
+                                sequencialmente.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="cabecalho-coordenadas">
+
+                        <span>Ponto</span>
+                        <span>Coordenada E</span>
+                        <span>Coordenada N</span>
+                        <span></span>
+
+                    </div>
+
+
+                    <div id="listaPontos">
+
+                        <div class="linha-coordenada">
+
+                            <span class="numero-ponto">P1</span>
+
+                            <input
+                                type="number"
+                                step="any"
+                                class="coordenada-e"
+                                placeholder="Ex.: 682000.00"
+                            >
+
+                            <input
+                                type="number"
+                                step="any"
+                                class="coordenada-n"
+                                placeholder="Ex.: 8154000.00"
+                            >
+
+                            <button
+                                type="button"
+                                class="botao-remover"
+                                aria-label="Remover ponto"
+                            >
+                                ×
+                            </button>
+
+                        </div>
+
+
+                        <div class="linha-coordenada">
+
+                            <span class="numero-ponto">P2</span>
+
+                            <input
+                                type="number"
+                                step="any"
+                                class="coordenada-e"
+                                placeholder="Ex.: 682500.00"
+                            >
+
+                            <input
+                                type="number"
+                                step="any"
+                                class="coordenada-n"
+                                placeholder="Ex.: 8154000.00"
+                            >
+
+                            <button
+                                type="button"
+                                class="botao-remover"
+                                aria-label="Remover ponto"
+                            >
+                                ×
+                            </button>
+
+                        </div>
+
+
+                        <div class="linha-coordenada">
+
+                            <span class="numero-ponto">P3</span>
+
+                            <input
+                                type="number"
+                                step="any"
+                                class="coordenada-e"
+                                placeholder="Ex.: 682500.00"
+                            >
+
+                            <input
+                                type="number"
+                                step="any"
+                                class="coordenada-n"
+                                placeholder="Ex.: 8154500.00"
+                            >
+
+                            <button
+                                type="button"
+                                class="botao-remover"
+                                aria-label="Remover ponto"
+                            >
+                                ×
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="acoes-calculadora">
+
+                        <button
+                            type="button"
+                            id="adicionarPonto"
+                            class="botao-adicionar"
+                        >
+                            + Adicionar ponto
+                        </button>
+
+                        <button
+                            type="button"
+                            id="calcularArea"
+                            class="botao-calcular"
+                        >
+                            Calcular área
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="resultadoArea"
+                        class="resultado-area"
+                    >
+
+                        <div class="resultado-item">
+
+                            <span>Área</span>
+
+                            <strong id="resultadoM2">
+                                —
+                            </strong>
+
+                            <small>m²</small>
+
+                        </div>
+
+
+                        <div class="resultado-item">
+
+                            <span>Área</span>
+
+                            <strong id="resultadoHa">
+                                —
+                            </strong>
+
+                            <small>hectares</small>
+
+                        </div>
+
+
+                        <div class="resultado-item">
+
+                            <span>Perímetro</span>
+
+                            <strong id="resultadoPerimetro">
+                                —
+                            </strong>
+
+                            <small>metros</small>
+
+                        </div>
+
+                    </div>
+
+
+                    <p
+                        id="mensagemCalculadora"
+                        class="mensagem-calculadora"
+                    ></p>
+
+
+                    <div class="aviso-calculadora">
+
+                        <strong>Atenção:</strong>
+
+                        esta ferramenta fornece cálculo geométrico
+                        auxiliar e não substitui levantamento,
+                        conferência ou responsabilidade técnica
+                        profissional.
+
+                    </div>
+
+                </div>
 
             </div>
 
