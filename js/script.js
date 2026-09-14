@@ -3,48 +3,48 @@
 // JavaScript principal
 // =====================================================
 
+document.addEventListener("DOMContentLoaded", function () {
 
-// =====================================================
-// MENU MOBILE
-// =====================================================
+    // =================================================
+    // MENU MOBILE
+    // =================================================
 
-const menuMobile =
-    document.getElementById("menuMobile");
+    const menuMobile =
+        document.getElementById("menuMobile");
 
-const menuPrincipal =
-    document.getElementById("menuPrincipal");
-
-
-if (menuMobile && menuPrincipal) {
-
-    menuMobile.addEventListener(
-        "click",
-        function () {
-
-            menuPrincipal.classList.toggle("ativo");
-
-            const menuAberto =
-                menuPrincipal.classList.contains("ativo");
-
-            menuMobile.setAttribute(
-                "aria-expanded",
-                menuAberto
-            );
-
-            menuMobile.textContent =
-                menuAberto ? "✕" : "☰";
-        }
-    );
+    const menuPrincipal =
+        document.getElementById("menuPrincipal");
 
 
-    const linksMenu =
-        document.querySelectorAll(
-            ".menu-principal a"
+    if (menuMobile && menuPrincipal) {
+
+        menuMobile.addEventListener(
+            "click",
+            function () {
+
+                menuPrincipal.classList.toggle("ativo");
+
+                const menuAberto =
+                    menuPrincipal.classList.contains("ativo");
+
+                menuMobile.setAttribute(
+                    "aria-expanded",
+                    menuAberto
+                );
+
+                menuMobile.textContent =
+                    menuAberto ? "✕" : "☰";
+            }
         );
 
 
-    linksMenu.forEach(
-        function (link) {
+        const linksMenu =
+            document.querySelectorAll(
+                ".menu-principal a"
+            );
+
+
+        linksMenu.forEach(function (link) {
 
             link.addEventListener(
                 "click",
@@ -63,328 +63,302 @@ if (menuMobile && menuPrincipal) {
                 }
             );
 
-        }
-    );
-}
+        });
+
+    }
 
 
-// =====================================================
-// CALCULADORA DE ÁREA
-// =====================================================
+    // =================================================
+    // CALCULADORA DE ÁREA
+    // =================================================
 
-const listaPontos =
-    document.getElementById("listaPontos");
+    const listaPontos =
+        document.getElementById("listaPontos");
 
-const botaoAdicionar =
-    document.getElementById("adicionarPonto");
+    const botaoAdicionar =
+        document.getElementById("adicionarPonto");
 
-const botaoCalcular =
-    document.getElementById("calcularArea");
+    const botaoCalcular =
+        document.getElementById("calcularArea");
 
-const resultadoM2 =
-    document.getElementById("resultadoM2");
+    const resultadoM2 =
+        document.getElementById("resultadoM2");
 
-const resultadoHa =
-    document.getElementById("resultadoHa");
+    const resultadoHa =
+        document.getElementById("resultadoHa");
 
-const resultadoPerimetro =
-    document.getElementById(
-        "resultadoPerimetro"
-    );
+    const resultadoPerimetro =
+        document.getElementById("resultadoPerimetro");
 
-const mensagemCalculadora =
-    document.getElementById(
-        "mensagemCalculadora"
-    );
+    const mensagemCalculadora =
+        document.getElementById("mensagemCalculadora");
 
 
-// =====================================================
-// ATUALIZA NUMERAÇÃO DOS PONTOS
-// =====================================================
+    function atualizarNumeracao() {
 
-function atualizarNumeracao() {
+        const linhas =
+            listaPontos.querySelectorAll(
+                ".linha-coordenada"
+            );
 
-    const linhas =
-        document.querySelectorAll(
-            ".linha-coordenada"
+
+        linhas.forEach(
+            function (linha, indice) {
+
+                const numero =
+                    linha.querySelector(
+                        ".numero-ponto"
+                    );
+
+                numero.textContent =
+                    "P" + (indice + 1);
+            }
         );
+    }
 
 
-    linhas.forEach(
-        function (linha, indice) {
+    function adicionarPonto() {
 
-            const numero =
+        const linha =
+            document.createElement("div");
+
+        linha.className =
+            "linha-coordenada";
+
+
+        linha.innerHTML = `
+            <span class="numero-ponto"></span>
+
+            <input
+                type="number"
+                step="any"
+                class="coordenada-e"
+                placeholder="Coordenada E"
+            >
+
+            <input
+                type="number"
+                step="any"
+                class="coordenada-n"
+                placeholder="Coordenada N"
+            >
+
+            <button
+                type="button"
+                class="botao-remover"
+                aria-label="Remover ponto"
+            >
+                ×
+            </button>
+        `;
+
+
+        listaPontos.appendChild(linha);
+
+        atualizarNumeracao();
+
+        mensagemCalculadora.textContent = "";
+    }
+
+
+    function formatarNumero(
+        valor,
+        casas = 2
+    ) {
+
+        return valor.toLocaleString(
+            "pt-BR",
+            {
+                minimumFractionDigits: casas,
+                maximumFractionDigits: casas
+            }
+        );
+    }
+
+
+    function calcularArea() {
+
+        mensagemCalculadora.textContent = "";
+
+
+        const linhas =
+            listaPontos.querySelectorAll(
+                ".linha-coordenada"
+            );
+
+
+        const pontos = [];
+
+
+        for (const linha of linhas) {
+
+            const campoE =
                 linha.querySelector(
-                    ".numero-ponto"
+                    ".coordenada-e"
                 );
 
-            numero.textContent =
-                "P" + (indice + 1);
-
-        }
-    );
-}
-
-
-// =====================================================
-// ADICIONA NOVO PONTO
-// =====================================================
-
-function adicionarPonto() {
-
-    const linha =
-        document.createElement("div");
-
-    linha.className =
-        "linha-coordenada";
-
-
-    linha.innerHTML = `
-
-        <span class="numero-ponto"></span>
-
-        <input
-            type="number"
-            step="any"
-            class="coordenada-e"
-            placeholder="Coordenada E"
-        >
-
-        <input
-            type="number"
-            step="any"
-            class="coordenada-n"
-            placeholder="Coordenada N"
-        >
-
-        <button
-            type="button"
-            class="botao-remover"
-            aria-label="Remover ponto"
-        >
-            ×
-        </button>
-
-    `;
-
-
-    listaPontos.appendChild(linha);
-
-    atualizarNumeracao();
-}
-
-
-// =====================================================
-// REMOVE PONTO
-// =====================================================
-
-listaPontos.addEventListener(
-    "click",
-    function (evento) {
-
-        if (
-            evento.target.classList.contains(
-                "botao-remover"
-            )
-        ) {
-
-            const linhas =
-                document.querySelectorAll(
-                    ".linha-coordenada"
+            const campoN =
+                linha.querySelector(
+                    ".coordenada-n"
                 );
 
 
-            if (linhas.length <= 3) {
+            const e =
+                parseFloat(campoE.value);
+
+            const n =
+                parseFloat(campoN.value);
+
+
+            if (
+                Number.isNaN(e) ||
+                Number.isNaN(n)
+            ) {
 
                 mensagemCalculadora.textContent =
-                    "É necessário manter pelo menos três pontos.";
+                    "Preencha todas as coordenadas antes de calcular.";
 
                 return;
             }
 
 
-            evento.target
-                .closest(".linha-coordenada")
-                .remove();
-
-
-            atualizarNumeracao();
-
-
-            mensagemCalculadora.textContent =
-                "";
+            pontos.push({
+                x: e,
+                y: n
+            });
         }
 
-    }
-);
 
-
-// =====================================================
-// FORMATAÇÃO NUMÉRICA
-// =====================================================
-
-function formatarNumero(
-    valor,
-    casas = 2
-) {
-
-    return valor.toLocaleString(
-        "pt-BR",
-        {
-            minimumFractionDigits: casas,
-            maximumFractionDigits: casas
-        }
-    );
-}
-
-
-// =====================================================
-// CALCULAR ÁREA E PERÍMETRO
-// =====================================================
-
-function calcularArea() {
-
-    mensagemCalculadora.textContent =
-        "";
-
-
-    const linhas =
-        document.querySelectorAll(
-            ".linha-coordenada"
-        );
-
-
-    const pontos = [];
-
-
-    for (const linha of linhas) {
-
-        const campoE =
-            linha.querySelector(
-                ".coordenada-e"
-            );
-
-        const campoN =
-            linha.querySelector(
-                ".coordenada-n"
-            );
-
-
-        const e =
-            parseFloat(campoE.value);
-
-        const n =
-            parseFloat(campoN.value);
-
-
-        if (
-            Number.isNaN(e) ||
-            Number.isNaN(n)
-        ) {
+        if (pontos.length < 3) {
 
             mensagemCalculadora.textContent =
-                "Preencha todas as coordenadas antes de calcular.";
+                "Informe pelo menos três pontos.";
 
             return;
         }
 
 
-        pontos.push({
-            x: e,
-            y: n
-        });
-    }
+        let somaArea = 0;
+        let perimetro = 0;
 
 
-    if (pontos.length < 3) {
+        for (
+            let i = 0;
+            i < pontos.length;
+            i++
+        ) {
+
+            const atual =
+                pontos[i];
+
+            const proximo =
+                pontos[
+                    (i + 1) %
+                    pontos.length
+                ];
+
+
+            somaArea +=
+                atual.x * proximo.y -
+                proximo.x * atual.y;
+
+
+            const deltaX =
+                proximo.x - atual.x;
+
+            const deltaY =
+                proximo.y - atual.y;
+
+
+            perimetro +=
+                Math.sqrt(
+                    deltaX * deltaX +
+                    deltaY * deltaY
+                );
+        }
+
+
+        const areaM2 =
+            Math.abs(somaArea) / 2;
+
+        const areaHa =
+            areaM2 / 10000;
+
+
+        resultadoM2.textContent =
+            formatarNumero(areaM2);
+
+        resultadoHa.textContent =
+            formatarNumero(areaHa, 4);
+
+        resultadoPerimetro.textContent =
+            formatarNumero(perimetro);
+
 
         mensagemCalculadora.textContent =
-            "Informe pelo menos três pontos.";
-
-        return;
+            "Cálculo realizado com sucesso.";
     }
 
 
-    let somaArea = 0;
+    if (botaoAdicionar) {
 
-    let perimetro = 0;
-
-
-    for (
-        let i = 0;
-        i < pontos.length;
-        i++
-    ) {
-
-        const atual =
-            pontos[i];
-
-        const proximo =
-            pontos[
-                (i + 1) %
-                pontos.length
-            ];
-
-
-        somaArea +=
-            atual.x * proximo.y -
-            proximo.x * atual.y;
-
-
-        const deltaX =
-            proximo.x - atual.x;
-
-        const deltaY =
-            proximo.y - atual.y;
-
-
-        perimetro +=
-            Math.sqrt(
-                deltaX * deltaX +
-                deltaY * deltaY
-            );
+        botaoAdicionar.addEventListener(
+            "click",
+            adicionarPonto
+        );
     }
 
 
-    const areaM2 =
-        Math.abs(somaArea) / 2;
+    if (botaoCalcular) {
 
-    const areaHa =
-        areaM2 / 10000;
-
-
-    resultadoM2.textContent =
-        formatarNumero(areaM2);
-
-    resultadoHa.textContent =
-        formatarNumero(areaHa, 4);
-
-    resultadoPerimetro.textContent =
-        formatarNumero(perimetro);
+        botaoCalcular.addEventListener(
+            "click",
+            calcularArea
+        );
+    }
 
 
-    mensagemCalculadora.textContent =
-        "Cálculo realizado com sucesso.";
-}
+    if (listaPontos) {
+
+        listaPontos.addEventListener(
+            "click",
+            function (evento) {
+
+                if (
+                    evento.target.classList.contains(
+                        "botao-remover"
+                    )
+                ) {
+
+                    const linhas =
+                        listaPontos.querySelectorAll(
+                            ".linha-coordenada"
+                        );
 
 
-// =====================================================
-// EVENTOS
-// =====================================================
+                    if (linhas.length <= 3) {
 
-if (botaoAdicionar) {
+                        mensagemCalculadora.textContent =
+                            "É necessário manter pelo menos três pontos.";
 
-    botaoAdicionar.addEventListener(
-        "click",
-        adicionarPonto
-    );
-}
+                        return;
+                    }
 
 
-if (botaoCalcular) {
+                    evento.target
+                        .closest(".linha-coordenada")
+                        .remove();
 
-    botaoCalcular.addEventListener(
-        "click",
-        calcularArea
-    );
-}
+
+                    atualizarNumeracao();
+
+                    mensagemCalculadora.textContent = "";
+                }
+            }
+        );
+    }
+
+
+    atualizarNumeracao();
+
+});
