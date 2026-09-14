@@ -3,9 +3,9 @@
    Identidade visual baseada no logotipo aprovado
 ===================================================== */
 
-/* -------------------------
+/* =====================================================
    PALETA DA MARCA
--------------------------- */
+===================================================== */
 
 :root {
     --preto: #0b0b0c;
@@ -13,16 +13,18 @@
     --cinza-escuro: #5f6063;
     --cinza: #9b9da1;
     --cinza-claro: #eef1f4;
+
     --azul: #159ee4;
     --azul-escuro: #0879ba;
     --azul-claro: #e9f6fd;
+
     --branco: #ffffff;
 }
 
 
-/* -------------------------
+/* =====================================================
    CONFIGURAÇÕES GERAIS
--------------------------- */
+===================================================== */
 
 * {
     margin: 0;
@@ -38,63 +40,215 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 
     background-color: var(--branco);
-
     color: var(--grafite);
 
     line-height: 1.6;
 }
 
 
-/* -------------------------
-   CABEÇALHO
--------------------------- */
+/* =====================================================
+   CABEÇALHO E MENU
+===================================================== */
 
-header {
+.cabecalho {
+    width: 100%;
+
     background-color: var(--branco);
 
-    padding: 22px 8%;
+    border-bottom: 1px solid #e5e7eb;
 
-    border-bottom: 1px solid #e4e7ea;
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
 }
 
 
-/* TOPOMUNDI */
+/* Container interno do cabeçalho */
 
-header h1 {
-    color: var(--preto);
+.container-menu {
+    width: 100%;
+    max-width: 1400px;
 
-    font-size: 38px;
+    margin: 0 auto;
 
+    padding: 14px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 28px;
+}
+
+
+/* =====================================================
+   LOGOTIPO
+===================================================== */
+
+.logo-area {
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+
+    flex-shrink: 0;
+}
+
+.logo-topomundi {
+    display: block;
+
+    width: 230px;
+    max-width: 100%;
+
+    height: auto;
+}
+
+
+/* =====================================================
+   MENU PRINCIPAL
+===================================================== */
+
+.menu-principal {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 26px;
+
+    flex: 1;
+}
+
+.menu-principal a {
+    position: relative;
+
+    color: var(--grafite);
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: color 0.3s;
+}
+
+.menu-principal a:hover {
+    color: var(--azul);
+}
+
+
+/* Linha azul abaixo do item */
+
+.menu-principal a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background-color: var(--azul);
+
+    transition: width 0.3s;
+}
+
+.menu-principal a:hover::after {
+    width: 100%;
+}
+
+
+/* =====================================================
+   BOTÃO SOLICITAR ORÇAMENTO
+===================================================== */
+
+.botao-orcamento {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 20px;
+
+    background-color: var(--azul);
+    color: var(--branco);
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    font-size: 14px;
     font-weight: 700;
 
-    letter-spacing: 5px;
+    white-space: nowrap;
 
-    line-height: 1;
+    transition:
+        background-color 0.3s,
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+.botao-orcamento:hover {
+    background-color: var(--azul-escuro);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 16px rgba(21, 158, 228, 0.20);
 }
 
 
-/* TOPOGRAFIA SEM FRONTEIRAS */
+/* =====================================================
+   BOTÃO DO MENU MOBILE
+===================================================== */
 
-header p {
-    margin-top: 8px;
+.menu-mobile {
+    display: none;
 
-    color: var(--cinza-escuro);
+    width: auto;
 
-    font-size: 13px;
+    padding: 5px;
 
-    text-transform: uppercase;
+    margin: 0;
 
-    letter-spacing: 4px;
+    background: transparent;
+
+    border: none;
+
+    color: var(--preto);
+
+    font-size: 30px;
+
+    cursor: pointer;
+}
+
+.menu-mobile:hover {
+    background: transparent;
+
+    transform: none;
+
+    box-shadow: none;
+
+    color: var(--azul);
 }
 
 
-/* -------------------------
-   ÁREA PRINCIPAL / HERO
--------------------------- */
+/* =====================================================
+   CONTEÚDO PRINCIPAL
+===================================================== */
 
 main {
     min-height: 600px;
 }
+
+
+/* =====================================================
+   SEÇÃO INICIAL / HERO
+===================================================== */
 
 main section {
     position: relative;
@@ -121,13 +275,12 @@ main section {
 }
 
 
-/* Pequeno detalhe azul */
+/* Detalhe azul acima do título */
 
 main section::before {
     content: "";
 
     width: 75px;
-
     height: 4px;
 
     background-color: var(--azul);
@@ -138,7 +291,9 @@ main section::before {
 }
 
 
-/* TÍTULO PRINCIPAL */
+/* =====================================================
+   TÍTULO PRINCIPAL
+===================================================== */
 
 main h2 {
     max-width: 760px;
@@ -146,7 +301,6 @@ main h2 {
     color: var(--preto);
 
     font-size: 50px;
-
     font-weight: 700;
 
     line-height: 1.1;
@@ -157,7 +311,9 @@ main h2 {
 }
 
 
-/* TEXTO PRINCIPAL */
+/* =====================================================
+   TEXTO PRINCIPAL
+===================================================== */
 
 main section > p {
     max-width: 650px;
@@ -172,15 +328,14 @@ main section > p {
 }
 
 
-/* -------------------------
-   BOTÕES
--------------------------- */
+/* =====================================================
+   BOTÕES GERAIS
+===================================================== */
 
 button {
     padding: 15px 28px;
 
     margin-right: 10px;
-
     margin-bottom: 10px;
 
     border: 2px solid var(--azul);
@@ -188,11 +343,9 @@ button {
     border-radius: 5px;
 
     background-color: var(--azul);
-
     color: var(--branco);
 
     font-size: 15px;
-
     font-weight: 700;
 
     cursor: pointer;
@@ -203,9 +356,6 @@ button {
         transform 0.3s,
         box-shadow 0.3s;
 }
-
-
-/* Efeito do botão */
 
 button:hover {
     background-color: var(--azul-escuro);
@@ -218,7 +368,7 @@ button:hover {
 }
 
 
-/* SEGUNDO BOTÃO */
+/* Segundo botão da página inicial */
 
 button + button {
     background-color: transparent;
@@ -227,7 +377,6 @@ button + button {
 
     border-color: var(--grafite);
 }
-
 
 button + button:hover {
     background-color: var(--grafite);
@@ -240,9 +389,9 @@ button + button:hover {
 }
 
 
-/* -------------------------
+/* =====================================================
    RODAPÉ
--------------------------- */
+===================================================== */
 
 footer {
     background-color: var(--preto);
@@ -254,7 +403,6 @@ footer {
     border-top: 4px solid var(--azul);
 }
 
-
 footer p {
     margin: 5px 0;
 
@@ -262,9 +410,6 @@ footer p {
 
     font-size: 14px;
 }
-
-
-/* Primeiro texto do rodapé */
 
 footer p:first-child {
     color: var(--branco);
@@ -275,31 +420,75 @@ footer p:first-child {
 }
 
 
-/* -------------------------
-   RESPONSIVIDADE
-   CELULAR E TABLET
--------------------------- */
+/* =====================================================
+   RESPONSIVIDADE - TABLET
+===================================================== */
+
+@media (max-width: 1050px) {
+
+    .container-menu {
+        padding: 12px 5%;
+
+        flex-wrap: wrap;
+    }
+
+    .logo-topomundi {
+        width: 190px;
+    }
+
+    .menu-mobile {
+        display: block;
+
+        order: 2;
+    }
+
+    .botao-orcamento {
+        margin-left: auto;
+
+        order: 1;
+    }
+
+    .menu-principal {
+        display: none;
+
+        order: 3;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 0;
+
+        padding-top: 15px;
+
+        border-top: 1px solid #e5e7eb;
+    }
+
+    .menu-principal.ativo {
+        display: flex;
+    }
+
+    .menu-principal a {
+        width: 100%;
+
+        padding: 14px 0;
+
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    .menu-principal a::after {
+        display: none;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE - CELULAR
+===================================================== */
 
 @media (max-width: 768px) {
-
-    header {
-        padding: 20px 6%;
-    }
-
-
-    header h1 {
-        font-size: 29px;
-
-        letter-spacing: 3px;
-    }
-
-
-    header p {
-        font-size: 10px;
-
-        letter-spacing: 2px;
-    }
-
 
     main section {
         min-height: 500px;
@@ -307,18 +496,15 @@ footer p:first-child {
         padding: 65px 6%;
     }
 
-
     main h2 {
         font-size: 36px;
 
         line-height: 1.15;
     }
 
-
     main section > p {
         font-size: 16px;
     }
-
 
     button {
         width: 100%;
@@ -328,34 +514,40 @@ footer p:first-child {
         margin-bottom: 12px;
     }
 
-
     footer {
         padding: 35px 6%;
     }
 }
 
 
-/* -------------------------
-   CELULARES PEQUENOS
--------------------------- */
+/* =====================================================
+   RESPONSIVIDADE - CELULARES PEQUENOS
+===================================================== */
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
 
-    header h1 {
-        font-size: 25px;
-
-        letter-spacing: 2px;
+    .logo-topomundi {
+        width: 160px;
     }
 
+    .botao-orcamento {
+        display: none;
+    }
+
+    .menu-mobile {
+        margin-left: auto;
+    }
+}
+
+
+@media (max-width: 480px) {
 
     main h2 {
         font-size: 31px;
     }
 
-
     main section {
         padding-top: 55px;
-
         padding-bottom: 55px;
     }
 }
