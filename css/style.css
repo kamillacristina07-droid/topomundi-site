@@ -1,0 +1,361 @@
+/* =====================================================
+   TOPOMUNDI TOPOGRAFIA LTDA
+   Identidade visual baseada no logotipo aprovado
+===================================================== */
+
+/* -------------------------
+   PALETA DA MARCA
+-------------------------- */
+
+:root {
+    --preto: #0b0b0c;
+    --grafite: #25282c;
+    --cinza-escuro: #5f6063;
+    --cinza: #9b9da1;
+    --cinza-claro: #eef1f4;
+    --azul: #159ee4;
+    --azul-escuro: #0879ba;
+    --azul-claro: #e9f6fd;
+    --branco: #ffffff;
+}
+
+
+/* -------------------------
+   CONFIGURAÇÕES GERAIS
+-------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: var(--branco);
+
+    color: var(--grafite);
+
+    line-height: 1.6;
+}
+
+
+/* -------------------------
+   CABEÇALHO
+-------------------------- */
+
+header {
+    background-color: var(--branco);
+
+    padding: 22px 8%;
+
+    border-bottom: 1px solid #e4e7ea;
+}
+
+
+/* TOPOMUNDI */
+
+header h1 {
+    color: var(--preto);
+
+    font-size: 38px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    line-height: 1;
+}
+
+
+/* TOPOGRAFIA SEM FRONTEIRAS */
+
+header p {
+    margin-top: 8px;
+
+    color: var(--cinza-escuro);
+
+    font-size: 13px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+}
+
+
+/* -------------------------
+   ÁREA PRINCIPAL / HERO
+-------------------------- */
+
+main {
+    min-height: 600px;
+}
+
+main section {
+    position: relative;
+
+    min-height: 560px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    padding: 90px 8%;
+
+    background:
+        linear-gradient(
+            120deg,
+            #ffffff 0%,
+            #f6f9fb 55%,
+            #eaf5fb 100%
+        );
+}
+
+
+/* Pequeno detalhe azul */
+
+main section::before {
+    content: "";
+
+    width: 75px;
+
+    height: 4px;
+
+    background-color: var(--azul);
+
+    margin-bottom: 25px;
+
+    border-radius: 5px;
+}
+
+
+/* TÍTULO PRINCIPAL */
+
+main h2 {
+    max-width: 760px;
+
+    color: var(--preto);
+
+    font-size: 50px;
+
+    font-weight: 700;
+
+    line-height: 1.1;
+
+    margin-bottom: 22px;
+
+    letter-spacing: -1px;
+}
+
+
+/* TEXTO PRINCIPAL */
+
+main section > p {
+    max-width: 650px;
+
+    color: var(--cinza-escuro);
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin-bottom: 32px;
+}
+
+
+/* -------------------------
+   BOTÕES
+-------------------------- */
+
+button {
+    padding: 15px 28px;
+
+    margin-right: 10px;
+
+    margin-bottom: 10px;
+
+    border: 2px solid var(--azul);
+
+    border-radius: 5px;
+
+    background-color: var(--azul);
+
+    color: var(--branco);
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s,
+        border-color 0.3s,
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+
+/* Efeito do botão */
+
+button:hover {
+    background-color: var(--azul-escuro);
+
+    border-color: var(--azul-escuro);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 18px rgba(21, 158, 228, 0.20);
+}
+
+
+/* SEGUNDO BOTÃO */
+
+button + button {
+    background-color: transparent;
+
+    color: var(--grafite);
+
+    border-color: var(--grafite);
+}
+
+
+button + button:hover {
+    background-color: var(--grafite);
+
+    border-color: var(--grafite);
+
+    color: var(--branco);
+
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+
+/* -------------------------
+   RODAPÉ
+-------------------------- */
+
+footer {
+    background-color: var(--preto);
+
+    color: var(--branco);
+
+    padding: 40px 8%;
+
+    border-top: 4px solid var(--azul);
+}
+
+
+footer p {
+    margin: 5px 0;
+
+    color: #d7dade;
+
+    font-size: 14px;
+}
+
+
+/* Primeiro texto do rodapé */
+
+footer p:first-child {
+    color: var(--branco);
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+/* -------------------------
+   RESPONSIVIDADE
+   CELULAR E TABLET
+-------------------------- */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 20px 6%;
+    }
+
+
+    header h1 {
+        font-size: 29px;
+
+        letter-spacing: 3px;
+    }
+
+
+    header p {
+        font-size: 10px;
+
+        letter-spacing: 2px;
+    }
+
+
+    main section {
+        min-height: 500px;
+
+        padding: 65px 6%;
+    }
+
+
+    main h2 {
+        font-size: 36px;
+
+        line-height: 1.15;
+    }
+
+
+    main section > p {
+        font-size: 16px;
+    }
+
+
+    button {
+        width: 100%;
+
+        margin-right: 0;
+
+        margin-bottom: 12px;
+    }
+
+
+    footer {
+        padding: 35px 6%;
+    }
+}
+
+
+/* -------------------------
+   CELULARES PEQUENOS
+-------------------------- */
+
+@media (max-width: 480px) {
+
+    header h1 {
+        font-size: 25px;
+
+        letter-spacing: 2px;
+    }
+
+
+    main h2 {
+        font-size: 31px;
+    }
+
+
+    main section {
+        padding-top: 55px;
+
+        padding-bottom: 55px;
+    }
+}
