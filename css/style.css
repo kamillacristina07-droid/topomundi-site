@@ -38,6 +38,10 @@ body {
     line-height: 1.6;
 }
 
+img {
+    max-width: 100%;
+}
+
 
 /* =====================================================
    CABEÇALHO
@@ -216,7 +220,6 @@ body {
     min-height: 650px;
 
     display: flex;
-
     align-items: center;
 
     padding: 90px 8%;
@@ -376,7 +379,7 @@ body {
 
 
 /* =====================================================
-   DIFERENCIAIS
+   DIFERENCIAIS DO HERO
 ===================================================== */
 
 .hero-diferenciais {
@@ -420,6 +423,167 @@ body {
     color: #d8dee6;
 
     font-size: 12px;
+}
+
+
+/* =====================================================
+   SEÇÕES GERAIS
+===================================================== */
+
+.container-secao {
+    width: 100%;
+    max-width: 1300px;
+
+    margin: 0 auto;
+}
+
+
+.cabecalho-secao {
+    max-width: 720px;
+
+    margin-bottom: 45px;
+}
+
+
+.etiqueta-secao {
+    display: inline-block;
+
+    color: var(--azul);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+
+.cabecalho-secao h2 {
+    color: var(--preto);
+
+    font-size: 40px;
+    line-height: 1.15;
+
+    margin-bottom: 15px;
+}
+
+
+.cabecalho-secao p {
+    color: var(--cinza-escuro);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   SERVIÇOS
+===================================================== */
+
+.secao-servicos {
+    padding: 90px 8%;
+
+    background-color: var(--branco);
+}
+
+
+.grade-servicos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+.card-servico {
+    position: relative;
+
+    padding: 30px;
+
+    min-height: 300px;
+
+    background-color: var(--branco);
+
+    border: 1px solid #e3e8ee;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.04);
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s,
+        border-color 0.3s;
+}
+
+
+.card-servico:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(21, 158, 228, 0.45);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+
+.icone-servico {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 22px;
+
+    background-color: var(--azul-claro);
+
+    border-radius: 8px;
+
+    font-size: 26px;
+}
+
+
+.card-servico h3 {
+    color: var(--preto);
+
+    font-size: 20px;
+
+    line-height: 1.3;
+
+    margin-bottom: 12px;
+}
+
+
+.card-servico p {
+    color: var(--cinza-escuro);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin-bottom: 22px;
+}
+
+
+.card-servico a {
+    color: var(--azul-escuro);
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.card-servico a:hover {
+    color: var(--azul);
 }
 
 
@@ -522,6 +686,11 @@ footer p:first-child {
         grid-template-columns:
             repeat(2, minmax(140px, 1fr));
     }
+
+    .grade-servicos {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
 }
 
 
@@ -549,6 +718,18 @@ footer p:first-child {
 
     .hero-diferenciais {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .secao-servicos {
+        padding: 70px 6%;
+    }
+
+    .cabecalho-secao h2 {
+        font-size: 34px;
+    }
+
+    .grade-servicos {
+        grid-template-columns: 1fr;
     }
 
     footer {
@@ -596,5 +777,9 @@ footer p:first-child {
 
     .hero-diferenciais {
         grid-template-columns: 1fr;
+    }
+
+    .card-servico {
+        min-height: auto;
     }
 }
