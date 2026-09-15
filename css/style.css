@@ -1455,3 +1455,199 @@ footer p:first-child {
         padding-top: 45px;
     }
 }
+/* =========================================================
+   ESTRUTURA TÉCNICA / EQUIPAMENTOS
+========================================================= */
+
+.equipamentos-topomundi {
+    width: 100%;
+    margin-top: 70px;
+    padding-top: 55px;
+
+    border-top: 1px solid #e3e8ec;
+}
+
+
+/* Cabeçalho */
+
+.cabecalho-equipamentos {
+    max-width: 680px;
+
+    margin-bottom: 35px;
+}
+
+
+.cabecalho-equipamentos .etiqueta-secao {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: var(--azul);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+.cabecalho-equipamentos h2 {
+    margin-bottom: 10px;
+
+    color: var(--preto);
+
+    font-size: 32px;
+
+    line-height: 1.2;
+}
+
+
+.cabecalho-equipamentos p {
+    color: var(--cinza-escuro);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   GRADE DOS EQUIPAMENTOS
+========================================================= */
+
+.grade-equipamentos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.card-equipamento {
+    min-height: 230px;
+
+    padding: 28px;
+
+    background: #f7f9fb;
+
+    border: 1px solid #e0e7ec;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 7px 22px
+        rgba(15, 35, 55, 0.04);
+
+    transition:
+        transform .25s,
+        border-color .25s,
+        box-shadow .25s;
+}
+
+
+.card-equipamento:hover {
+    transform: translateY(-4px);
+
+    border-color: #abd9f2;
+
+    box-shadow:
+        0 13px 28px
+        rgba(15, 35, 55, 0.08);
+}
+
+
+/* =========================================================
+   ÍCONE DO EQUIPAMENTO
+========================================================= */
+
+.icone-equipamento {
+    width: 52px;
+    height: 52px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--azul);
+
+    color: #ffffff;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   TEXTO DO CARD
+========================================================= */
+
+.card-equipamento h3 {
+    margin-bottom: 10px;
+
+    color: var(--preto);
+
+    font-size: 18px;
+
+    line-height: 1.3;
+}
+
+
+.card-equipamento p {
+    margin: 0;
+
+    color: var(--cinza-escuro);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .grade-equipamentos {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .equipamentos-topomundi {
+        margin-top: 50px;
+        padding-top: 40px;
+    }
+
+
+    .grade-equipamentos {
+        grid-template-columns: 1fr;
+    }
+
+
+    .cabecalho-equipamentos h2 {
+        font-size: 28px;
+    }
+
+
+    .card-equipamento {
+        min-height: auto;
+    }
+}
