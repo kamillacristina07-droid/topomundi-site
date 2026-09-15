@@ -25,13 +25,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     .value
                     .trim();
 
-
             const telefone =
                 document
                     .getElementById("orcTelefone")
                     .value
                     .trim();
-
 
             const email =
                 document
@@ -39,12 +37,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     .value
                     .trim();
 
-
             const servico =
                 document
                     .getElementById("orcServico")
                     .value;
-
 
             const cidade =
                 document
@@ -52,12 +48,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     .value
                     .trim();
 
-
             const uf =
                 document
                     .getElementById("orcUf")
                     .value;
-
 
             const area =
                 document
@@ -65,12 +59,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     .value
                     .trim();
 
-
             const prazo =
                 document
                     .getElementById("orcPrazo")
                     .value;
-
 
             const detalhes =
                 document
@@ -104,12 +96,10 @@ document.addEventListener("DOMContentLoaded", function () {
             texto +=
                 "*DADOS DO CLIENTE*\n";
 
-
             texto +=
                 "Nome: " +
                 nome +
                 "\n";
-
 
             texto +=
                 "Telefone: " +
@@ -123,19 +113,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     "E-mail: " +
                     email +
                     "\n";
-
             }
 
 
             texto +=
                 "\n*SERVIÇO SOLICITADO*\n";
 
-
             texto +=
                 "Serviço: " +
                 servico +
                 "\n";
-
 
             texto +=
                 "Localização: " +
@@ -151,7 +138,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     "Área aproximada: " +
                     area +
                     "\n";
-
             }
 
 
@@ -161,17 +147,17 @@ document.addEventListener("DOMContentLoaded", function () {
                     "Prazo desejado: " +
                     prazo +
                     "\n";
-
             }
 
 
             if (detalhes) {
 
                 texto +=
-                    "\n*INFORMAÇÕES ADICIONAIS*\n" +
+                    "\n*INFORMAÇÕES ADICIONAIS*\n";
+
+                texto +=
                     detalhes +
                     "\n";
-
             }
 
 
@@ -190,11 +176,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 encodeURIComponent(texto);
 
 
-            window.open(
-                url,
-                "_blank",
-                "noopener,noreferrer"
-            );
+            /*
+             * Redireciona diretamente para o WhatsApp.
+             * Evita bloqueio de pop-up do navegador.
+             */
+
+            window.location.href = url;
 
         }
     );
