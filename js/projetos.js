@@ -1,54 +1,43 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const botoes =
+    const botoesProjeto =
         document.querySelectorAll(".botao-ver-projeto");
 
-    const modais =
-        document.querySelectorAll(".modal-projeto");
 
-    const botoesFechar =
-        document.querySelectorAll(".fechar-modal");
-
-
-    botoes.forEach(function (botao) {
+    botoesProjeto.forEach(function (botao) {
 
         botao.addEventListener("click", function () {
 
-            const id =
-                botao.getAttribute("data-projeto");
+            const idProjeto =
+                this.getAttribute("data-projeto");
 
             const modal =
-                document.getElementById(id);
+                document.getElementById(idProjeto);
 
-            if (modal) {
 
-                modal.classList.add("ativo");
+            if (!modal) {
 
-                document.body.style.overflow =
-                    "hidden";
+                console.error(
+                    "Modal não encontrado:",
+                    idProjeto
+                );
+
+                return;
             }
+
+
+            modal.classList.add("ativo");
+
+            document.body.style.overflow =
+                "hidden";
 
         });
 
     });
 
 
-    function fecharModal(modal) {
-
-        modal.classList.remove("ativo");
-
-        document.body.style.overflow =
-            "";
-
-        const videos =
-            modal.querySelectorAll("video");
-
-        videos.forEach(function (video) {
-
-            video.pause();
-
-        });
-    }
+    const botoesFechar =
+        document.querySelectorAll(".fechar-modal");
 
 
     botoesFechar.forEach(function (botao) {
@@ -56,13 +45,17 @@ document.addEventListener("DOMContentLoaded", function () {
         botao.addEventListener("click", function () {
 
             const modal =
-                botao.closest(".modal-projeto");
+                this.closest(".modal-projeto");
 
-            fecharModal(modal);
+            fecharProjeto(modal);
 
         });
 
     });
+
+
+    const modais =
+        document.querySelectorAll(".modal-projeto");
 
 
     modais.forEach(function (modal) {
@@ -71,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (evento.target === modal) {
 
-                fecharModal(modal);
+                fecharProjeto(modal);
 
             }
 
@@ -84,16 +77,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (evento.key === "Escape") {
 
-            document
-                .querySelectorAll(".modal-projeto.ativo")
-                .forEach(function (modal) {
+            const modalAberto =
+                document.querySelector(
+                    ".modal-projeto.ativo"
+                );
 
-                    fecharModal(modal);
 
-                });
+            if (modalAberto) {
+
+                fecharProjeto(modalAberto);
+
+            }
 
         }
 
     });
+
+
+    function fecharProjeto(modal) {
+
+        if (!modal) {
+            return;
+        }
+
+
+        modal.classList.remove("ativo");
+
+        document.body.style.overflow =
+            "";
+
+
+        const videos =
+            modal.querySelectorAll("video");
+
+
+        videos.forEach(function (video) {
+
+            video.pause();
+
+        });
+
+    }
 
 });
