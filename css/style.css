@@ -1651,3 +1651,59 @@ footer p:first-child {
         min-height: auto;
     }
 }
+/* =========================================================
+   FOTOS DOS EQUIPAMENTOS
+========================================================= */
+
+.card-equipamento {
+    padding: 0;
+
+    overflow: hidden;
+
+    background: #ffffff;
+}
+
+
+.imagem-equipamento {
+    display: block;
+
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+
+.conteudo-equipamento {
+    padding: 24px;
+}
+
+
+.conteudo-equipamento h3 {
+    margin-bottom: 10px;
+
+    color: var(--preto);
+
+    font-size: 18px;
+}
+
+
+.conteudo-equipamento p {
+    color: var(--cinza-escuro);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+@media (max-width: 650px) {
+
+    .imagem-equipamento {
+        height: 210px;
+    }
+
+}
