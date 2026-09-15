@@ -2378,3 +2378,352 @@ footer p:first-child {
     }
 
 }
+/* =========================================================
+   ORÇAMENTO
+========================================================= */
+
+.secao-orcamento {
+    padding: 100px 8%;
+
+    background: #f4f7f9;
+}
+
+
+.orcamento-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, .85fr)
+        minmax(500px, 1.15fr);
+
+    gap: 65px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   INTRODUÇÃO
+========================================================= */
+
+.orcamento-intro {
+    position: sticky;
+
+    top: 130px;
+}
+
+
+.orcamento-intro h2 {
+    margin-bottom: 20px;
+
+    max-width: 530px;
+
+    color: var(--preto);
+
+    font-size: 40px;
+
+    line-height: 1.15;
+}
+
+
+.orcamento-intro > p {
+    margin-bottom: 35px;
+
+    max-width: 540px;
+
+    color: var(--cinza-escuro);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   PASSOS
+========================================================= */
+
+.orcamento-passos {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+.orcamento-passo {
+    display: grid;
+
+    grid-template-columns:
+        48px 1fr;
+
+    gap: 15px;
+
+    align-items: start;
+}
+
+
+.orcamento-passo > span {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--azul);
+
+    color: #ffffff;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.orcamento-passo strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: var(--preto);
+
+    font-size: 14px;
+}
+
+
+.orcamento-passo p {
+    color: var(--cinza-escuro);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   CARD DO FORMULÁRIO
+========================================================= */
+
+.card-orcamento {
+    padding: 38px;
+
+    background: #ffffff;
+
+    border: 1px solid #dde5eb;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(15, 35, 55, .06);
+}
+
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+.campo-completo {
+    grid-column:
+        1 / -1;
+}
+
+
+.card-orcamento .campo-formulario label {
+    color: var(--grafite);
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.card-orcamento input,
+.card-orcamento select,
+.card-orcamento textarea {
+    width: 100%;
+
+    padding: 0 13px;
+
+    background: #ffffff;
+
+    border: 1px solid #c9d4dc;
+
+    border-radius: 7px;
+
+    color: var(--grafite);
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border-color .2s,
+        box-shadow .2s;
+}
+
+
+.card-orcamento input,
+.card-orcamento select {
+    height: 46px;
+}
+
+
+.card-orcamento textarea {
+    padding-top: 12px;
+
+    resize: vertical;
+
+    min-height: 120px;
+}
+
+
+.card-orcamento input:focus,
+.card-orcamento select:focus,
+.card-orcamento textarea:focus {
+    border-color: var(--azul);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(38,151,220,.10);
+}
+
+
+/* =========================================================
+   AVISO
+========================================================= */
+
+.orcamento-aviso {
+    margin-top: 22px;
+
+    padding: 14px 16px;
+
+    background: #f5f8fa;
+
+    border-left: 3px solid var(--azul);
+
+    border-radius: 4px;
+
+    color: var(--cinza-escuro);
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   BOTÃO
+========================================================= */
+
+.botao-enviar-orcamento {
+    width: 100%;
+
+    min-height: 50px;
+
+    margin-top: 20px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #25d366;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+
+.botao-enviar-orcamento:hover {
+    background: #1fbd5c;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px
+        rgba(37,211,102,.18);
+}
+
+
+.mensagem-orcamento {
+    min-height: 20px;
+
+    margin-top: 10px;
+
+    color: #b52d2d;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .orcamento-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+
+    .orcamento-intro {
+        position: static;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .secao-orcamento {
+        padding: 75px 6%;
+    }
+
+
+    .orcamento-intro h2 {
+        font-size: 34px;
+    }
+
+
+    .card-orcamento {
+        padding: 24px;
+    }
+
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .campo-completo {
+        grid-column: auto;
+    }
+
+}
