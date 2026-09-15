@@ -1351,7 +1351,374 @@
 </div>
 
 </section>
+<!-- =====================================================
+     ORÇAMENTO
+===================================================== -->
 
+<section id="orcamento" class="secao-orcamento">
+
+    <div class="container-secao">
+
+        <div class="orcamento-grid">
+
+            <!-- TEXTO -->
+
+            <div class="orcamento-intro">
+
+                <span class="etiqueta-secao">
+                    SOLICITE UM ORÇAMENTO
+                </span>
+
+                <h2>
+                    Conte um pouco sobre o seu projeto
+                </h2>
+
+                <p>
+                    Preencha as informações disponíveis.
+                    Com esses dados, a equipe da TOPOMUNDI poderá
+                    compreender melhor sua necessidade e dar
+                    continuidade ao atendimento pelo WhatsApp.
+                </p>
+
+
+                <div class="orcamento-passos">
+
+                    <div class="orcamento-passo">
+
+                        <span>01</span>
+
+                        <div>
+                            <strong>Informe o serviço</strong>
+                            <p>
+                                Selecione o tipo de serviço
+                                que você precisa.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="orcamento-passo">
+
+                        <span>02</span>
+
+                        <div>
+                            <strong>Informe a localização</strong>
+
+                            <p>
+                                Cidade, estado e dados básicos
+                                do imóvel ou empreendimento.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="orcamento-passo">
+
+                        <span>03</span>
+
+                        <div>
+                            <strong>Envie para a TOPOMUNDI</strong>
+
+                            <p>
+                                O sistema organiza as informações
+                                e abre uma conversa no WhatsApp.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORMULÁRIO -->
+
+            <div class="card-orcamento">
+
+                <form id="formOrcamento">
+
+                    <div class="form-grid">
+
+                        <!-- NOME -->
+
+                        <div class="campo-formulario campo-completo">
+
+                            <label for="orcNome">
+                                Nome *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="orcNome"
+                                placeholder="Seu nome"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- TELEFONE -->
+
+                        <div class="campo-formulario">
+
+                            <label for="orcTelefone">
+                                Telefone / WhatsApp *
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="orcTelefone"
+                                placeholder="(00) 00000-0000"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+
+                        <div class="campo-formulario">
+
+                            <label for="orcEmail">
+                                E-mail
+                            </label>
+
+                            <input
+                                type="email"
+                                id="orcEmail"
+                                placeholder="seuemail@email.com"
+                            >
+
+                        </div>
+
+
+                        <!-- SERVIÇO -->
+
+                        <div class="campo-formulario campo-completo">
+
+                            <label for="orcServico">
+                                Serviço desejado *
+                            </label>
+
+                            <select
+                                id="orcServico"
+                                required
+                            >
+
+                                <option value="">
+                                    Selecione um serviço
+                                </option>
+
+                                <option>
+                                    Levantamento Planialtimétrico
+                                </option>
+
+                                <option>
+                                    Georreferenciamento
+                                </option>
+
+                                <option>
+                                    Locação de Obras
+                                </option>
+
+                                <option>
+                                    Aerolevantamento com Drone
+                                </option>
+
+                                <option>
+                                    Levantamento Cadastral
+                                </option>
+
+                                <option>
+                                    Consultoria Técnica
+                                </option>
+
+                                <option>
+                                    Outro serviço
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- CIDADE -->
+
+                        <div class="campo-formulario">
+
+                            <label for="orcCidade">
+                                Cidade *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="orcCidade"
+                                placeholder="Ex.: Goiânia"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- UF -->
+
+                        <div class="campo-formulario">
+
+                            <label for="orcUf">
+                                Estado / UF *
+                            </label>
+
+                            <select
+                                id="orcUf"
+                                required
+                            >
+
+                                <option value="">
+                                    Selecione
+                                </option>
+
+                                <option value="AC">AC</option>
+                                <option value="AL">AL</option>
+                                <option value="AP">AP</option>
+                                <option value="AM">AM</option>
+                                <option value="BA">BA</option>
+                                <option value="CE">CE</option>
+                                <option value="DF">DF</option>
+                                <option value="ES">ES</option>
+                                <option value="GO">GO</option>
+                                <option value="MA">MA</option>
+                                <option value="MT">MT</option>
+                                <option value="MS">MS</option>
+                                <option value="MG">MG</option>
+                                <option value="PA">PA</option>
+                                <option value="PB">PB</option>
+                                <option value="PR">PR</option>
+                                <option value="PE">PE</option>
+                                <option value="PI">PI</option>
+                                <option value="RJ">RJ</option>
+                                <option value="RN">RN</option>
+                                <option value="RS">RS</option>
+                                <option value="RO">RO</option>
+                                <option value="RR">RR</option>
+                                <option value="SC">SC</option>
+                                <option value="SP">SP</option>
+                                <option value="SE">SE</option>
+                                <option value="TO">TO</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- ÁREA -->
+
+                        <div class="campo-formulario">
+
+                            <label for="orcArea">
+                                Área aproximada
+                            </label>
+
+                            <input
+                                type="text"
+                                id="orcArea"
+                                placeholder="Ex.: 5 hectares"
+                            >
+
+                        </div>
+
+
+                        <!-- PRAZO -->
+
+                        <div class="campo-formulario">
+
+                            <label for="orcPrazo">
+                                Prazo desejado
+                            </label>
+
+                            <select id="orcPrazo">
+
+                                <option value="">
+                                    Não definido
+                                </option>
+
+                                <option>
+                                    Urgente
+                                </option>
+
+                                <option>
+                                    Até 7 dias
+                                </option>
+
+                                <option>
+                                    Até 15 dias
+                                </option>
+
+                                <option>
+                                    Até 30 dias
+                                </option>
+
+                                <option>
+                                    Sem urgência
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- DETALHES -->
+
+                        <div class="campo-formulario campo-completo">
+
+                            <label for="orcDetalhes">
+                                Informações adicionais
+                            </label>
+
+                            <textarea
+                                id="orcDetalhes"
+                                rows="5"
+                                placeholder="Descreva brevemente o imóvel, projeto ou serviço necessário."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="orcamento-aviso">
+
+                        Ao enviar, uma conversa será aberta no WhatsApp
+                        da TOPOMUNDI com os dados preenchidos.
+                        Nenhuma informação é armazenada neste site.
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="botao-enviar-orcamento"
+                    >
+                        Enviar orçamento pelo WhatsApp
+                    </button>
+
+
+                    <p
+                        id="mensagemOrcamento"
+                        class="mensagem-orcamento"
+                    ></p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 <!-- =====================================================
      CONTATO
