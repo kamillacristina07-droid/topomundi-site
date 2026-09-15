@@ -1334,3 +1334,11 @@ footer p:first-child {
         height: 42px;
     }
 }
+#inicio,
+#servicos,
+#ferramentas,
+#sobre,
+#contato,
+#orcamento {
+    scroll-margin-top: 110px;
+}
